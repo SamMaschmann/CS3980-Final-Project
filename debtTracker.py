@@ -8,6 +8,8 @@ debt_router = APIRouter()
 debt_list = []
 nextId = 0
 
+curUpdateID = 0
+
 
 @debt_router.post("/debts", status_code=status.HTTP_201_CREATED)
 async def add_debt(debt: DebtRequest) -> dict:
@@ -26,6 +28,7 @@ async def get_debts() -> dict:
     json_data = jsonable_encoder(debt_list)
     return JSONResponse(content=json_data)
 
+
 @debt_router.delete("/debts/{id}")
 async def delete_debt(id: int) -> dict:
     for i in range(len(debt_list)):
@@ -34,3 +37,27 @@ async def delete_debt(id: int) -> dict:
             debt_list.pop(i)
             return{"message": "Item successfully removed"}
     return{"message": "Item could not be found"}
+
+
+@debt_router.put("/updateDebts/{id}")
+async def begin_update(id: int) -> dict:
+    global curUpdateID
+    curUpdateID = id
+    return {"message": "id updated"}
+
+
+@debt_router.put("/debts")
+async def update_debt(debt: DebtRequest) -> dict:
+    print(curUpdateID)
+    for x in debt_list:
+        print(x.id)
+        if x.id == curUpdateID:
+            print("Yippie")
+            x.person = debt.person
+            x.amount = debt.amount
+            x.reason = debt.reason
+            return {"message": "Todo updated successfully"}
+    print("uhoh")
+    return {"message": "Item could not found"}
+    
+

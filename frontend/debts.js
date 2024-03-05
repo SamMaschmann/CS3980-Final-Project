@@ -6,6 +6,8 @@ let nameEditInput = document.getElementById('name-edit')
 let amountEditInput = document.getElementById('amount-edit')
 let reasonEditInput = document.getElementById('reason-edit')
 
+let updateid = [];
+
 const api = 'http://127.0.0.1:8000';
 
 function tryAdd() {
@@ -59,7 +61,7 @@ async function loadTable(table){
                 deleteButton.style.borderRadius = 12
 
                 updateButton.addEventListener("click", function() {
-                    window.location.href = "/updateDebt";
+                    beginUpdate(item.id)
                 });
                 deleteButton.addEventListener("click", function(){
                     deleteDebt(item.id);
@@ -84,21 +86,42 @@ let deleteDebt = (id) => {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            loadTable(document.querySelector("table"))
+            loadTable(document.querySelector("table"));
         }
     };
     xhr.open('DELETE', `${api}/debts/${id}`, true);
     xhr.send();
 };
 
-
-function tryUpdateDebt(){
-    //updateDebt(id, nameEditInput, amountEditInput, reasonEditInput)
-    alert('WIP');
+let beginUpdate = (id) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            window.location.href = "/updateDebt";
+        }
+    };
+    xhr.open('PUT', `${api}/updateDebts/${id}`, true);
+    xhr.send();
 }
 
-let updateDebt = (id, person, amount, reason) => {
 
+function tryUpdateDebt(){
+    updateDebt(nameEditInput.value, amountEditInput.value, reasonEditInput.value)
+}
+
+let updateDebt = (person, amount, reason) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            
+            window.location.href = "/";
+            loadTable(document.querySelector("table"));
+        
+        }
+    };
+    xhr.open('PUT', `${api}/debts`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(JSON.stringify({ person, amount, reason }));
 }
 
 loadTable(document.querySelector("table"));
