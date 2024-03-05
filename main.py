@@ -23,6 +23,10 @@ async def read_index():
 async def read_index():
     return FileResponse('./frontend/addDebt.html')
 
+@app.get("/updateDebt")
+async def read_index():
+    return FileResponse('./frontend/updateDebt.html')
+
 @app.get("/style.css")
 async def read_index():
     return FileResponse('./frontend/style.css')

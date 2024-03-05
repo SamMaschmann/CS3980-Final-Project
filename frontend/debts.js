@@ -47,9 +47,30 @@ async function loadTable(table){
                 amountCellElement.textContent = '$' + item.amount
                 reasonCellElement.textContent = item.reason
 
+
+                const updateButton = document.createElement('button');
+                const deleteButton = document.createElement('button');
+
+                updateButton.innerText = "Update"
+                deleteButton.innerText = "Delete"
+                updateButton.style.backgroundColor = "#42b0ff"
+                deleteButton.style.backgroundColor = "#ff2200"
+                updateButton.style.borderRadius = 12
+                deleteButton.style.borderRadius = 12
+
+                updateButton.addEventListener("click", function() {
+                    window.location.href = "/updateDebt";
+                });
+                deleteButton.addEventListener("click", function(){
+                    deleteDebt(item.id);
+                });
+
+
                 rowElement.appendChild(nameCellElement);
                 rowElement.appendChild(amountCellElement);
                 rowElement.appendChild(reasonCellElement);
+                rowElement.appendChild(updateButton);
+                rowElement.appendChild(deleteButton);
 
                 tableBody.appendChild(rowElement);
             }
@@ -57,28 +78,26 @@ async function loadTable(table){
     }
     xhr.open('GET', `${api}/debts`, true);
     xhr.send();
-    
+}
 
-    const tableBody = table.querySelector("tbody");
+let deleteDebt = (id) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            loadTable(document.querySelector("table"))
+        }
+    };
+    xhr.open('DELETE', `${api}/debts/${id}`, true);
+    xhr.send();
+};
 
-    tableBody.innerHTML = "";
-    for (const item of data) {
-        const rowElement = document.createElement("tr");
 
-        const nameCellElement = document.createElement("td");
-        const amountCellElement = document.createElement("td");
-        const reasonCellElement = document.createElement("td");
+function tryUpdateDebt(){
+    //updateDebt(id, nameEditInput, amountEditInput, reasonEditInput)
+    alert('WIP');
+}
 
-        nameCellElement.textContent = item.person
-        amountCellElement.textContent = item.amount
-        reasonCellElement.textContent = item.reason
-
-        rowElement.appendChild(nameCellElement);
-        rowElement.appendChild(amountCellElement);
-        rowElement.appendChild(reasonCellElement);
-
-        tableBody.appendChild(rowElement)
-    }
+let updateDebt = (id, person, amount, reason) => {
 
 }
 

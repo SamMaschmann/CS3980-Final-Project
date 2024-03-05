@@ -25,3 +25,12 @@ async def add_debt(debt: DebtRequest) -> dict:
 async def get_debts() -> dict:
     json_data = jsonable_encoder(debt_list)
     return JSONResponse(content=json_data)
+
+@debt_router.delete("/debts/{id}")
+async def delete_debt(id: int) -> dict:
+    for i in range(len(debt_list)):
+        debt = debt_list[i]
+        if debt.id == id:
+            debt_list.pop(i)
+            return{"message": "Item successfully removed"}
+    return{"message": "Item could not be found"}
