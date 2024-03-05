@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Debt</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+
+    <body>
+        <bar>
+            <span class="header">Add a New Debt</span>
+        </bar>
+
+        <div class="row">
+            <div class="sidecolumn">
+                <br>
+            </div>
+
+            <div class="midcolumn">
+                <br>
+                
+                <form id="createDebt" action="javascript:" onsubmit="tryAdd()">
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="amount">Amount: </label>
+                    <input type="number" id="amount" name="amount" required><br><br>
+
+                    <label for="reason">Reason: </label>
+                    <input type="text" id="reason" name="reason"><br><br>
+
+                    <input type="submit" value="Create Debt">
+                </form>
+                <br>
+                <a href="/">
+                    <button class="cancelButton">Cancel</button>
+                 </a>
+            </div>
+        </div>
+        <script src="debts.js"></script>
+    </body>
+</html>

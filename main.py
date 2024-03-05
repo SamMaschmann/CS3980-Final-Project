@@ -19,6 +19,10 @@ app.include_router(debt_router)
 async def read_index():
     return FileResponse('./frontend/index.html')
 
+@app.get("/addDebt")
+async def read_index():
+    return FileResponse('./frontend/addDebt.html')
+
 @app.get("/style.css")
 async def read_index():
     return FileResponse('./frontend/style.css')
