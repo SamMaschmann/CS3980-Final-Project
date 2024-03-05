@@ -57,4 +57,5 @@ This is what the main page looks like with a few entries added.
 #
 
 ![Update Debt Form](/pics/pywebMt_update.JPG)
+
 This is the form that is filled out in order to update a debt.
