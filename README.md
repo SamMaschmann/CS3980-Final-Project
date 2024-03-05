@@ -1,5 +1,5 @@
 # CS3980-Midterm-Proj
-This is the REAMME file for the midterm project for CS:3980 for the Spring 2024 semester.
+This is the README file for the midterm project for CS:3980 for the Spring 2024 semester.
 This project serves as a web application for tracking personal debts.
 
 
@@ -52,6 +52,7 @@ This is the form that is filled out in order to enter a debt.
 #
 
 ![Filled in Table](/pics/pywebMt_filled.JPG)
+
 This is what the main page looks like with a few entries added.
 #
 
