@@ -1,5 +1,5 @@
-# CS3980-Midterm-Proj
-This is the README file for the midterm project for CS:3980 for the Spring 2024 semester.
+# CS3980-Final-Proj
+This is the README file for the final project for CS:3980 for the Spring 2024 semester.
 This project serves as a web application for tracking personal debts.
 
 
