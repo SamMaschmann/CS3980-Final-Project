@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Update Debt</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Debt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <bar>
+        <span class="header">Update a Debt</span>
+    </bar>
 
-
-    <body>
-        <bar>
-            <span class="header">Update a Debt</span>
-        </bar>
-
-        <div class="row">
-            <div class="sidecolumn">
-                <br>
-            </div>
-
-            <div class="midcolumn">
-                <br>
-                
-                <form id="updateDebt" action="javascript:" onsubmit="tryUpdateDebt()">
-                    <label for="name-edit">Name: </label>
-                    <input type="text" id="name-edit" name="name-edit" required><br><br>
-
-                    <label for="amount-edit">Amount: </label>
-                    <input type="number" id="amount-edit" name="amount-edit" required><br><br>
-
-                    <label for="reason-edit">Reason: </label>
-                    <input type="text" id="reason-edit" name="reason-edit"><br><br>
-
-                    <input type="submit" value="Update Debt">
-                </form>
-                <br>
-                <a href="/">
-                    <button class="cancelButton">Cancel</button>
-                 </a>
-            </div>
+    <div class="row">
+        <div class="sidecolumn">
+            <br>
         </div>
-        <script src="debts.js"></script>
-    </body>
+
+        <div class="midcolumn">
+            <br>
+            
+            <form id="updateDebt" action="javascript:" onsubmit="tryUpdateDebt()">
+                <label for="name-edit">Name: </label>
+                <input type="text" id="name-edit" name="name-edit" required><br><br>
+
+                <label for="amount-edit">Amount: </label>
+                <input type="number" id="amount-edit" name="amount-edit" required><br><br>
+
+                <label for="reason-edit">Reason: </label>
+                <input type="text" id="reason-edit" name="reason-edit"><br><br>
+
+                <label for="type-edit">Type:</label>
+                <select id="type-edit" name="type-edit">
+                    <option value="debt">Debt</option>
+                    <option value="request">Payment Request</option>
+                </select><br><br>
+
+                <input type="submit" value="Update Debt">
+            </form>
+            <br>
+            <a href="/">
+                <button class="cancelButton">Cancel</button>
+             </a>
+        </div>
+    </div>
+    <script src="debts.js"></script>
+</body>
 </html>

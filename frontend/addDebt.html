@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Create Debt</title>
+        <title>Create Debt/Request</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
 
     <body>
         <bar>
-            <span class="header">Add a New Debt</span>
+            <span class="header">Add a New Debt/Request</span>
         </bar>
 
         <div class="row">
@@ -18,6 +18,12 @@
 
             <div class="midcolumn">
                 <br>
+                <br>
+            <label for="debtType">Select Type:</label>
+            <select id="debtType" onchange="changeForm()">
+                <option value="debt">Debt</option>
+                <option value="request">Payment Request</option>
+            </select>
                 
                 <form id="createDebt" action="javascript:" onsubmit="tryAdd()">
                     <label for="name">Name: </label>

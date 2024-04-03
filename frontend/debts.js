@@ -1,30 +1,49 @@
-let nameInput = document.getElementById('name')
-let amountInput = document.getElementById('amount')
-let reasonInput = document.getElementById('reason')
 
-let nameEditInput = document.getElementById('name-edit')
-let amountEditInput = document.getElementById('amount-edit')
-let reasonEditInput = document.getElementById('reason-edit')
+let nameInput = document.getElementById('name');
+let amountInput = document.getElementById('amount');
+let reasonInput = document.getElementById('reason');
 
+let nameEditInput = document.getElementById('name-edit');
+let amountEditInput = document.getElementById('amount-edit');
+let reasonEditInput = document.getElementById('reason-edit');
 let updateid = [];
 
-const api = 'http://127.0.0.1:8000';
+const api = 'http://127.0.0.1:5173';
 
 function tryAdd() {
-    addDebt(nameInput.value, amountInput.value, reasonInput.value);
+    const debtType = document.getElementById('debtType').value;
+    if (debtType === 'debt') {
+        addDebt(nameInput.value, amountInput.value, reasonInput.value);
+    } else if (debtType === 'request') {
+        addPaymentRequest(nameInput.value, amountInput.value, reasonInput.value);
+    }
 }
 
 let addDebt = (person, amount, reason) => {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 201) {
-            alert("Success!")
+            alert("Debt added successfully!");
             window.location.href = "/";
         }
     }
     xhr.open('POST', `${api}/debts`, true);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.send(JSON.stringify({ person, amount, reason }));
+}
+
+
+let addPaymentRequest = (recipient, amount, reason) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 201) {
+            alert("Payment request added successfully!");
+            window.location.href = "/";
+        }
+    }
+    xhr.open('POST', `${api}/payment-requests`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(JSON.stringify({ recipient, amount, reason }));
 }
 
 
