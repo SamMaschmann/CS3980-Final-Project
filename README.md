@@ -1,4 +1,4 @@
-# CS3980-Final-Proj
+# CS3980-Final-Project
 This is the README file for the final project for CS:3980 for the Spring 2024 semester.
 This project serves as a web application for tracking personal debts.
 
