@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from debtModel import Debt, DebtRequest
+from dataModels import Debt, DebtRequest
 
 debt_router = APIRouter()
 
@@ -16,7 +16,9 @@ async def add_debt(debt: DebtRequest) -> dict:
     global nextId
     nextId += 1
 
-    newDebt = Debt(id=nextId, person=debt.person, amount=debt.amount, reason=debt.reason)
+    newDebt = Debt(
+        id=nextId, person=debt.person, amount=debt.amount, reason=debt.reason
+    )
     debt_list.append(newDebt)
 
     json_data = newDebt.model_dump()
@@ -35,8 +37,8 @@ async def delete_debt(id: int) -> dict:
         debt = debt_list[i]
         if debt.id == id:
             debt_list.pop(i)
-            return{"message": "Item successfully removed"}
-    return{"message": "Item could not be found"}
+            return {"message": "Item successfully removed"}
+    return {"message": "Item could not be found"}
 
 
 @debt_router.put("/updateDebts/{id}")
@@ -59,5 +61,3 @@ async def update_debt(debt: DebtRequest) -> dict:
             return {"message": "Todo updated successfully"}
     print("uhoh")
     return {"message": "Item could not found"}
-    
-
