@@ -1,0 +1,35 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  height: 100vh;
+  background: rgb(225, 226, 228);
+  border-radius: 0.5rem;
+}
+
+.sidebar-item {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 14pt;
+  border-radius: 0.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.selected {
+    background-color: whitesmoke;
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar-container {
+    width: 25vw;
+  }
+}
+
+.sidebar-item:hover {
+  background-color: whitesmoke;
+}
