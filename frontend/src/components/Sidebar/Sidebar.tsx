@@ -21,7 +21,7 @@ function Sidebar() {
     "Transactions",
     "Budget",
     "Friends",
-    "Calender",
+    "Calendar",
     "Loans",
     "Requests",
   ];
