@@ -1,0 +1,44 @@
+.transaction-container {
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.transaction-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transaction-bot {
+    display: flex;
+}
+
+.transaction-party {
+    font-weight: 500;
+    margin-right: 15rem;
+}
+
+@media screen and (max-width: 992px) {
+  .transaction-party {
+    margin-right: 8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .transaction-party {
+    margin-right: 2rem;
+  }
+}
+
+
+
+.transaction-amount {
+    background-color: lightgray;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 10px;
+    width: 40px;
+}

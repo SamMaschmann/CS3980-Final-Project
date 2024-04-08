@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-
+import LoanItem from '../../components/LoanItem/LoanItem';
+import "./loans.css"
 
 export type Loan = {
-    name: string,
+    otherParty: string
+    description: string
     amount: number
 }
 
 function Loans() {
   const [loanName, setLoanName] = useState('');
   const [loanAmount, setLoanAmount] = useState<string>("");
-  const [loansList, setLoansList] = useState<Loan[]>([]);
+  const [loansList, setLoansList] = useState<Loan[]>([{
+    otherParty: "Mike",
+    description: "For the car",
+    amount: 5000
+  }, {
+    otherParty: "Carol",
+    description: "For starting a restaurant",
+    amount: 10000
+  }]);
 
   const handleLoanNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLoanName(event.target.value);
@@ -22,8 +32,9 @@ function Loans() {
   const handleAddLoan = () => {
     if (loanName.trim() !== '' && loanAmount.trim() !== '') {
       const newLoan = {
-        name: loanName,
+        description: loanName,
         amount: parseFloat(loanAmount),
+        otherParty: "Mandy"
       };
       
       setLoansList([...loansList, newLoan]);
@@ -53,13 +64,11 @@ function Loans() {
       </div>
       <div>
         <h3>Existing Loans:</h3>
-        <ul>
+        <div className='loan-list'>
           {loansList.map((loan, index) => (
-            <li key={index}>
-              {loan.name} - ${loan.amount.toFixed(2)}
-            </li>
+            <LoanItem {...loan} key={index} />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

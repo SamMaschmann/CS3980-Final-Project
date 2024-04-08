@@ -7,10 +7,10 @@ import Root from './routes/root/root.tsx'
 import Transactions from './routes/transactions/transactions.tsx'
 import Budget from './routes/budget/budget.tsx'
 import Friends from './routes/friends/friends.tsx'
-import Calender from './routes/calendar/calendar.tsx'
 import Loans from './routes/loans/loans.tsx'
 import Requests from './routes/requests/requests.tsx'
 import Dashboard from './routes/dashboard/dashboard.tsx'
+import Calendar from './routes/calendar/calendar.tsx'
 
 
 const router = createBrowserRouter([
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
         element: <Friends />
       },
       {
-        path: "calender",
-        element: <Calender />
+        path: "calendar",
+        element: <Calendar />
       },
       {
         path: "loans",

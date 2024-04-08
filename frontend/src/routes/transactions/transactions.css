@@ -1,0 +1,11 @@
+.transactions-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.transaction-title {
+    font-size: 14pt;
+    font-weight: 600;
+}

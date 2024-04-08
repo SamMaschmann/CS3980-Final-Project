@@ -30,6 +30,12 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .sidebar-item {
+    font-size: 10pt;
+  }
+}
+
 .sidebar-item:hover {
   background-color: whitesmoke;
 }

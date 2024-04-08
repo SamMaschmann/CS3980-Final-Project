@@ -9,7 +9,7 @@ function Root() {
       <Header />
       <div className="body-container">
         <Sidebar />
-        <div>
+        <div className="page-content">
           <Outlet />
         </div>
       </div>

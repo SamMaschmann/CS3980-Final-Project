@@ -1,8 +1,16 @@
 import React from 'react'
+import BudgetExpenses from '../../components/BudgetExpenses/BudgetExpenses'
 
 function Budget() {
   return (
-    <div>Budget</div>
+    <div>
+
+        <BudgetExpenses />
+
+
+
+
+    </div>
   )
 }
 
