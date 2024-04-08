@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 
+
+export type Loan = {
+    name: string,
+    amount: number
+}
+
 function Loans() {
   const [loanName, setLoanName] = useState('');
-  const [loanAmount, setLoanAmount] = useState('');
-  const [loansList, setLoansList] = useState([]);
+  const [loanAmount, setLoanAmount] = useState<string>("");
+  const [loansList, setLoansList] = useState<Loan[]>([]);
 
   const handleLoanNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLoanName(event.target.value);

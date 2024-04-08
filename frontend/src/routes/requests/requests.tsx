@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 
+export type Request = {
+    name: string,
+    amount: number
+}
+
 function Requests() {
   const [requestName, setRequestName] = useState('');
   const [requestAmount, setRequestAmount] = useState('');
-  const [requestsList, setRequestsList] = useState([]);
+  const [requestsList, setRequestsList] = useState<Request[]>([]);
 
   const handleRequestNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRequestName(event.target.value);
