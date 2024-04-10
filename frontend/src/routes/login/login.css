@@ -1,0 +1,73 @@
+
+
+.login-page {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.login-header {
+    font-size: 32pt;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-right: 0.5rem;
+}
+
+.login-pages {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+
+}
+
+.login-switch {
+    font-size: 14pt;
+}
+
+.clicked {
+    font-weight: 600;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-field {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

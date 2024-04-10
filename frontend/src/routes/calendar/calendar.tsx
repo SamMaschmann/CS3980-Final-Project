@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './calendar.css';
 function Calendar() {
   const [date, setDate] = useState(new Date());
+  const today = new Date()
 
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -32,6 +33,10 @@ function Calendar() {
     setDate(nextMonth);
   };
 
+  const isItToday = (day: number) => {
+    return date.getMonth() == today.getMonth() && day == today.getDate() && date.getFullYear() == today.getFullYear()
+  }
+
   const renderCalendar = () => {
     const firstDayOfMonth = getFirstDayOfMonth(date);
     const daysInMonth = getDaysInMonth(date);
@@ -40,13 +45,18 @@ function Calendar() {
 
     const blanks = [];
     for (let i = 0; i < firstDayOfMonth; i++) {
+      console.log(isItToday(i))
       blanks.push(<td key={`blank-${i}`} className="calendar-day empty"></td>);
     }
 
     const days = [];
     for (let day = 1; day <= daysInMonth; day++) {
       days.push(
-        <td key={`day-${day}`} className="calendar-day">
+        <td
+          key={`day-${day}`}
+          style={{ backgroundColor: isItToday(day) ? "var(--color-primary)" : "" }}
+          className="calendar-day"
+        >
           {day}
         </td>
       );
