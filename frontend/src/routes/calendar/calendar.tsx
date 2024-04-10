@@ -11,6 +11,7 @@ function Calendar() {
 
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+  const dayWithEvents = [1, 9, 22]
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -54,10 +55,17 @@ function Calendar() {
       days.push(
         <td
           key={`day-${day}`}
-          style={{ backgroundColor: isItToday(day) ? "var(--color-primary)" : "" }}
+          style={{
+            backgroundColor: isItToday(day) ? "var(--color-primary)" : "",
+          }}
           className="calendar-day"
         >
           {day}
+          {/* {dayWithEvents.includes(day) && (
+            <div className="calendar-num-container">
+              <div className="calendar-num">1</div>
+            </div>
+          )} */}
         </td>
       );
     }
