@@ -2,10 +2,26 @@ import React, { useState } from "react";
 import "./login.css";
 import Button from "../../components/Common/Button/Button";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"; // You'll need to install axios: npm install axios
 
 function Login() {
   const [page, setPage] = useState<number>(1);
-  const navigate = useNavigate()
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("/api/login", { username, password });
+      const token = response.data.token; // Assuming your backend returns a token
+      localStorage.setItem("token", token); // Store token in local storage
+      navigate("/");
+    } catch (error) {
+      console.error("Login failed:", error);
+      // Handle login failure (e.g., show error message)
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -20,60 +36,81 @@ function Login() {
         </header>
         <div className="login-pages">
           <button
-            className={"login-switch " + (page == 1 ? "clicked" : "")}
+            className={"login-switch " + (page === 1 ? "clicked" : "")}
             onClick={() => setPage(1)}
           >
             Sign In
           </button>
           <button
-            className={"login-switch " + (page == 2 ? "clicked" : "")}
+            className={"login-switch " + (page === 2 ? "clicked" : "")}
             onClick={() => setPage(2)}
           >
             Sign Up
           </button>
         </div>
-        {page == 1 && (
+        {page === 1 && (
           <div className="login-form-container">
             <form className="login-form">
               <div className="login-field">
                 <label className="label">Username</label>
-                <input className="input" type="text" required={true} />
+                <input
+                  className="input"
+                  type="text"
+                  required={true}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="login-field">
                 <label className="label">Password</label>
-                <input className="input" type="password" required={true} />
+                <input
+                  className="input"
+                  type="password"
+                  required={true}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <div className="login-button">
-                <Button
-                  text="Sign In"
-                  bg_color="blue"
-                  action={() => navigate("/")}
-                />
+                <Button text="Sign In" bg_color="blue" action={handleLogin} />
               </div>
             </form>
           </div>
         )}
-        {page == 2 && (
+        {page === 2 && (
           <div className="login-form-container">
             <form className="login-form">
               <div className="login-field">
                 <label className="label">Username</label>
-                <input className="input" type="text" required={true} />
+                <input
+                  className="input"
+                  type="text"
+                  required={true}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="login-field">
                 <label className="label">Password</label>
-                <input className="input" type="password" required={true} />
+                <input
+                  className="input"
+                  type="password"
+                  required={true}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <div className="login-field">
                 <label className="label">Confirm Password</label>
-                <input className="input" type="password" required={true} />
+                <input
+                  className="input"
+                  type="password"
+                  required={true}
+                  // Add onChange handler if needed
+                />
               </div>
               <div className="login-button">
-                <Button
-                  text="Sign Up"
-                  bg_color="blue"
-                  action={() => navigate("/")}
-                />
+                <Button text="Sign Up" bg_color="blue" action={handleLogin} />
               </div>
             </form>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LoanItem from '../../components/LoanItem/LoanItem';
 import "./loans.css"
 
@@ -43,6 +43,32 @@ function Loans() {
       setLoanAmount('');
     }
   };
+
+  useEffect(() => {
+    // Write log data to a file
+    const logData = JSON.stringify(loansList, null, 2); // Convert loansList to JSON string with formatting
+    
+    // Create a Blob with the log data
+    const blob = new Blob([logData], { type: 'text/plain' });
+    
+    // Create a URL for the Blob
+    const url = window.URL.createObjectURL(blob);
+    
+    // Create an anchor element
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'loans.log'; // Set the filename for the downloaded file
+    document.body.appendChild(a);
+    
+    // Trigger a click event on the anchor element to start the download
+    a.click();
+    
+    // Remove the anchor element from the DOM
+    document.body.removeChild(a);
+    
+    // Revoke the URL to free up memory
+    window.URL.revokeObjectURL(url);
+  }, [loansList]);
 
   return (
     <div>

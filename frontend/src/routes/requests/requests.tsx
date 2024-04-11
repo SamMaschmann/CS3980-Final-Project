@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export type Request = {
     name: string,
@@ -30,6 +30,32 @@ function Requests() {
       setRequestAmount('');
     }
   };
+
+  useEffect(() => {
+    // Write log data to a file
+    const logData = requestsList.map(request => `${request.name} - $${request.amount.toFixed(2)}`).join('\n');
+    
+    // Create a Blob with the log data
+    const blob = new Blob([logData], { type: 'text/plain' });
+    
+    // Create a URL for the Blob
+    const url = window.URL.createObjectURL(blob);
+    
+    // Create an anchor element
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'requests.log'; // Set the filename for the downloaded file
+    document.body.appendChild(a);
+    
+    // Trigger a click event on the anchor element to start the download
+    a.click();
+    
+    // Remove the anchor element from the DOM
+    document.body.removeChild(a);
+    
+    // Revoke the URL to free up memory
+    window.URL.revokeObjectURL(url);
+  }, [requestsList]);
 
   return (
     <div>
