@@ -39,3 +39,7 @@ async def read_index():
 @app.get("/debts.js")
 async def read_index():
     return FileResponse("./frontend/debts.js")
+
+@app.get("/src/main.tsx")
+async def read_index():
+    return FileResponse("./frontend/src/main.tsx")

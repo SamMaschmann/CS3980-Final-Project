@@ -12,3 +12,11 @@ class DebtRequest(BaseModel):
     person: str
     amount: float
     reason: str
+
+
+
+
+
+class UserRequest(BaseModel):
+    username: str
+    password: str

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from dataModels import Debt, DebtRequest
+from dataModels import Debt, DebtRequest, UserRequest
 
 debt_router = APIRouter()
 
@@ -61,3 +61,15 @@ async def update_debt(debt: DebtRequest) -> dict:
             return {"message": "Todo updated successfully"}
     print("uhoh")
     return {"message": "Item could not found"}
+
+
+
+
+@debt_router.post("/signup")
+async def signup(userInfo: UserRequest) -> dict:
+    username = userInfo.username
+    password = userInfo.password
+
+    #ADD ENTRY TO DATABASE HERE
+
+    return {"user": username}

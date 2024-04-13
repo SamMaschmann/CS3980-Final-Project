@@ -4,11 +4,18 @@ import Button from "../../components/Common/Button/Button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // You'll need to install axios: npm install axios
 
+import { signup } from '../../store/authSlice';
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
+
 function Login() {
   const [page, setPage] = useState<number>(1);
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+
+  const user = useAppSelector((state) => state.auth.user)
+  const error = useAppSelector((state) => state.auth.error)
+  const dispatch = useAppDispatch();
 
   const handleLogin = async () => {
     try {
@@ -21,6 +28,11 @@ function Login() {
       // Handle login failure (e.g., show error message)
     }
   };
+
+  const handleSignup = async () => {
+    dispatch(signup({username, password}))
+    alert(user)
+  }
 
   return (
     <div className="login-page">
@@ -72,7 +84,7 @@ function Login() {
                 />
               </div>
               <div className="login-button">
-                <Button text="Sign In" bg_color="blue" action={handleLogin} />
+                <Button text="Sign In" bg_color="blue" action={handleLogin} /> 
               </div>
             </form>
           </div>
@@ -110,7 +122,7 @@ function Login() {
                 />
               </div>
               <div className="login-button">
-                <Button text="Sign Up" bg_color="blue" action={handleLogin} />
+                <Button text="Sign Up" bg_color="blue" action={handleSignup} />
               </div>
             </form>
           </div>
