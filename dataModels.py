@@ -1,4 +1,7 @@
+
+from typing import Optional
 from pydantic import BaseModel
+
 
 
 class Debt(BaseModel):
@@ -17,6 +20,27 @@ class DebtRequest(BaseModel):
 
 
 
+
 class UserRequest(BaseModel):
     username: str
     password: str
+    
+
+# don't return password
+class User(BaseModel):
+    id: int
+    username: str
+    
+    
+class Amount(BaseModel):
+    amount_dollars: int
+    amount_cents: int
+   
+    
+class Transaction(BaseModel):
+    user: User
+    other_user: User
+    amount: Amount
+    description: Optional[str]
+    outgoing: bool
+    
