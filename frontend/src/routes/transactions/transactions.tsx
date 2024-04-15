@@ -2,35 +2,33 @@ import React from 'react'
 import "./transactions.css"
 import Transaction from '../../components/Transaction/TransactionItem'
 import TransactionItem from '../../components/Transaction/TransactionItem'
+import {useFetchData} from "../../hooks/useFetchData"
+
+export type User = {
+  username: string
+  id: number
+}
+
+export type Amount = {
+  amount_dollars: number,
+  amount_cents: number
+}
 
 export type Transaction = {
-    otherParty: string,
-    amount: number,
-    type: "Incoming" | "Outgoing"
-    description: string
+    user: User
+    other_user: User
+    amount: Amount
+    description?: string
+    outgoing: boolean
 }
 
 function Transactions() {
 
-const testTransactions: Transaction[] = [{
-    otherParty: "Daniel",
-    amount: 100,
-    type: "Incoming",
-    description: "This is for food"
-}, {
-    otherParty: "Tom",
-    amount: 200,
-    type: "Outgoing",
-    description: "This is for the game"
-}, {
-    otherParty: "Linda",
-    amount: 10,
-    type: "Incoming",
-    description: "👏"
-}]
+  const {isLoading, error, apiData} = useFetchData<Transaction>("http://localhost:8000/transactions")
 
-const incoming = testTransactions.filter((t)=> t.type == "Incoming")
-const outgoing = testTransactions.filter((t) => t.type == "Outgoing");
+
+  const outgoing = apiData?.filter((t)=> t.outgoing === true)
+  const incoming = apiData?.filter((t)=> t.outgoing === false)
 
 
 
@@ -38,14 +36,14 @@ const outgoing = testTransactions.filter((t) => t.type == "Outgoing");
     <div className="transactions-container">
       <div>
         <div className="transaction-title">Incoming</div>
-        {incoming.map((t) => (
+        {incoming && incoming.map((t) => (
           <TransactionItem {...t} />
         ))}
       </div>
 
       <div>
         <div className="transaction-title">Outgoing</div>
-        {outgoing.map((t) => (
+        {outgoing && outgoing.map((t) => (
           <TransactionItem {...t} />
         ))}
       </div>

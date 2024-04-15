@@ -2,13 +2,13 @@ import React from 'react'
 import { Transaction } from '../../routes/transactions/transactions'
 import "./TransactionItem.css"
 
-function TransactionItem({otherParty, amount, description}: Transaction) {
+function TransactionItem({user, other_user, amount, description}: Transaction) {
   return (
     <div className='transaction-container'>
         <div className='transaction-top'>
-            <div className='transaction-party'>{otherParty}</div>
+            <div className='transaction-party'>{other_user.username}</div>
             <div />
-            <div className='transaction-amount'>${amount}</div>
+            <div className='transaction-amount'>${amount.amount_dollars}.{amount.amount_cents}</div>
         </div>
         <div className='transaction-bot'>
             {description}
