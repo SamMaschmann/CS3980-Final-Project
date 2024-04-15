@@ -14,6 +14,10 @@ import Requests from "./routes/requests/requests.tsx";
 import Dashboard from "./routes/dashboard/dashboard.tsx";
 import Calendar from "./routes/calendar/calendar.tsx";
 import Login from "./routes/login/login.tsx";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 
 const router = createBrowserRouter([
   {

@@ -1,24 +1,15 @@
 import React from 'react'
 import "./BudgetExpenses.css"
+import { Expense } from '../../routes/budget/budget';
 
-
-type Expense = {
-    name: string,
-    category: string,
-    amount: number,
+type Props = {
+  expenses: Expense[]
 }
 
-function BudgetExpenses() {
 
-    const expenses: Expense[] = [{
-        name: "Bagel",
-        category: "Food",
-        amount: 5
-    }, {
-        name: "Notebook",
-        category: "School",
-        amount: 10
-    }]
+function BudgetExpenses({ expenses}:Props ) {
+
+
   return (
     <div className="expense-table-container">
       <div className="expense-table-title">Expenses</div>
