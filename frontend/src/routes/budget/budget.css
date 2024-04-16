@@ -1,0 +1,19 @@
+.budget-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+  }
+  
+  .budget-pie-container,
+  .budget-expenses-container {
+    width: calc(30% - 10px); /* Adjust width and margin as needed */
+    margin-right: 20px; /* Adjust margin between components */
+  }
+  
+  @media (max-width: 768px) {
+    .budget-pie-container,
+    .budget-expenses-container {
+      width: 100%; /* Adjust width for smaller screens */
+      margin-right: 0; /* Remove margin for smaller screens */
+    }
+  }
+  
