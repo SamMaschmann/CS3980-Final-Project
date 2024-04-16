@@ -2,7 +2,7 @@ from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 
-from backend.models.dataModels import Transaction
+from models.dataModels import Transaction
 
 
 async def init_db():

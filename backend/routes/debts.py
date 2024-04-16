@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from backend.models.dataModels import Debt, DebtRequest, UserRequest
+from models.dataModels import Debt, DebtRequest, UserRequest
 
 debt_router = APIRouter()
 

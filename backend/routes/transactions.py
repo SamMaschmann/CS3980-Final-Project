@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Path, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from backend.models.dataModels import Amount, Transaction, User
+from models.dataModels import Amount, Transaction, User
 
 transactions_router = APIRouter()
 

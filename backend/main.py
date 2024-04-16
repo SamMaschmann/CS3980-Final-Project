@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from starlette.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes.debts import debt_router
-from backend.routes.transactions import transactions_router
+from routes.debts import debt_router
+from routes.transactions import transactions_router
 
 app = FastAPI()
 
