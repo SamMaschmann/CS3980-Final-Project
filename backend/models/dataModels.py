@@ -1,4 +1,5 @@
 
+import datetime
 from typing import Optional
 from pydantic import BaseModel
 
@@ -37,10 +38,16 @@ class Amount(BaseModel):
     amount_cents: int
    
     
-class Transaction(BaseModel):
+class TransactionRequest(BaseModel):
     user: User
     other_user: User
     amount: Amount
     description: Optional[str]
+    # this field can likely be deleted later once db is set up
     outgoing: bool
     
+
+# adds extra stuff that would only be added in mongo
+class Transaction(TransactionRequest):
+    _id: str
+    created_at: datetime.datetime
