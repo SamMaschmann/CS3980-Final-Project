@@ -3,16 +3,9 @@ import "./transactions.css"
 import Transaction from '../../components/Transaction/TransactionItem'
 import TransactionItem from '../../components/Transaction/TransactionItem'
 import {useFetchData} from "../../hooks/useFetchData"
+import { Amount, User } from '../../global_types'
 
-export type User = {
-  username: string
-  id: number
-}
 
-export type Amount = {
-  amount_dollars: number,
-  amount_cents: number
-}
 
 export type Transaction = {
     user: User

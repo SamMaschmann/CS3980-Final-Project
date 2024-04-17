@@ -4,3 +4,25 @@
     margin: 0 2rem 0 2rem;
 
 }
+
+.loan-input {
+    margin: 0.5rem 8rem 0.5rem 8rem;
+}
+
+.loan-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loan-form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.download-text {
+    font: italic;
+    background-color: gainsboro;
+    border-radius: 0.3rem;
+}

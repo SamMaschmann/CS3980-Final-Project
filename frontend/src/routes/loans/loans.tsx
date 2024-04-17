@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoanItem from '../../components/LoanItem/LoanItem';
 import "./loans.css"
+import Button from '../../components/Common/Button/Button';
 
 export type Loan = {
     otherParty: string
@@ -44,7 +45,7 @@ function Loans() {
     }
   };
 
-  useEffect(() => {
+  function downloadLogs() {
     // Write log data to a file
     const logData = JSON.stringify(loansList, null, 2); // Convert loansList to JSON string with formatting
     
@@ -68,29 +69,38 @@ function Loans() {
     
     // Revoke the URL to free up memory
     window.URL.revokeObjectURL(url);
-  }, [loansList]);
+  }
 
   return (
     <div>
       <h2>Loans</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Loan Name"
-          value={loanName}
-          onChange={handleLoanNameChange}
-        />
-        <input
-          type="number"
-          placeholder="Loan Amount"
-          value={loanAmount}
-          onChange={handleLoanAmountChange}
-        />
-        <button onClick={handleAddLoan}>Add Loan</button>
+      <div className="loan-form">
+        <div className="loan-input">
+          <input
+            type="text"
+            className="input"
+            placeholder="Loan Name"
+            value={loanName}
+            onChange={handleLoanNameChange}
+          />
+        </div>
+        <div className="loan-input">
+          <input
+            className="input"
+            type="number"
+            placeholder="Loan Amount"
+            value={loanAmount}
+            onChange={handleLoanAmountChange}
+          />
+        </div>
+        <div className='loan-form-button'>
+          <Button action={handleAddLoan} bg_color="green" text="Add Loan" />
+        </div>
       </div>
       <div>
         <h3>Existing Loans:</h3>
-        <div className='loan-list'>
+        <button className='download-text' onClick={downloadLogs}>Download Data</button>
+        <div className="loan-list">
           {loansList.map((loan, index) => (
             <LoanItem {...loan} key={index} />
           ))}

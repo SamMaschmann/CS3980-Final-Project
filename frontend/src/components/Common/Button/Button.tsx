@@ -4,7 +4,7 @@ import "./Button.css"
 type ButtonProps = {
     text: string
     action?: () => void
-    bg_color: "red" | "blue"
+    bg_color: "red" | "blue" | "green"
 }
 
 function Button({text, action, bg_color}: ButtonProps) {

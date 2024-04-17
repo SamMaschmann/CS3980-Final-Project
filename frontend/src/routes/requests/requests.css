@@ -1,0 +1,29 @@
+.request-input {
+    margin: 0.5rem 8rem 0.5rem 8rem;
+}
+
+.request-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.request-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.request-list {
+        width: 30rem;
+        margin: 0 auto;
+
+}
+
+
+@media screen and (min-width: 992px) {
+  .request-lists {
+    display: flex;
+    justify-content: center;
+  }
+}

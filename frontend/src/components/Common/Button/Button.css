@@ -20,3 +20,7 @@
 .blue { 
     background-color: rgb(171, 171, 232);
 }
+
+.green {
+    background-color: var(--color-primary);
+}

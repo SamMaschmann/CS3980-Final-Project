@@ -1,0 +1,63 @@
+.request-container {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.request-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-names {
+    display: flex;
+    margin-left: 0.25rem;
+    align-items: center;
+}
+
+.request-from {
+    margin-right: 0.5rem;
+    font-weight: 600;
+    font-size: 14pt;
+}
+
+.request-to {
+    margin-left: 0.5rem;
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.request-amount {
+    margin-right: 0.5rem;
+}
+
+.request-time {
+    display: flex;
+    margin-left: 0.25rem;
+    font-style: italic;
+}
+
+.request-body {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 0.25rem;
+}
+
+.request-accept {
+    display: flex;
+    justify-content: center;
+}
+
+.request-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.declined {
+    color: var(--color-danger);
+    font-weight: 500;
+}

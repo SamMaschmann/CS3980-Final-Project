@@ -18,30 +18,32 @@ app.include_router(debt_router)
 app.include_router(transactions_router)
 
 
-@app.get("/")
-async def read_index():
-    return FileResponse("./frontend/index.html")
+# Commented these out because I don't think we need them and they sometimes cause issues otherwise
+
+# @app.get("/")
+# async def read_index():
+#     return FileResponse("./frontend/index.html")
 
 
-@app.get("/addDebt")
-async def read_index():
-    return FileResponse("./frontend/addDebt.html")
+# @app.get("/addDebt")
+# async def read_index():
+#     return FileResponse("./frontend/addDebt.html")
 
 
-@app.get("/updateDebt")
-async def read_index():
-    return FileResponse("./frontend/updateDebt.html")
+# @app.get("/updateDebt")
+# async def read_index():
+#     return FileResponse("./frontend/updateDebt.html")
 
 
-@app.get("/style.css")
-async def read_index():
-    return FileResponse("./frontend/style.css")
+# @app.get("/style.css")
+# async def read_index():
+#     return FileResponse("./frontend/style.css")
 
 
-@app.get("/debts.js")
-async def read_index():
-    return FileResponse("./frontend/debts.js")
+# @app.get("/debts.js")
+# async def read_index():
+#     return FileResponse("./frontend/debts.js")
 
-@app.get("/src/main.tsx")
-async def read_index():
-    return FileResponse("./frontend/src/main.tsx")
+# @app.get("/src/main.tsx")
+# async def read_index():
+#     return FileResponse("./frontend/src/main.tsx")
