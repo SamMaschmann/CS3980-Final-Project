@@ -26,23 +26,39 @@ async function handleRequestAction(type: "Accept" | "Decline") {
           requested
           <span className="request-to">{request.to.username}</span>
         </div>
-        <div className="request-amount">${request.amount}.00</div>
+        <div className="request-amount">
+          ${request.amount.toLocaleString("en", { useGrouping: true })}.00
+        </div>
       </div>
       <div className="request-time">{request.time_sent.toDateString()}</div>
       <div className="request-body">{request.name}</div>
       {/* TODO: FIX this with better check */}
       {request.to.username === "You" ? (
-        <div className='request-actions'>
+        <div className="request-actions">
           <div className="request-accept">
-            <Button text="Accept" bg_color="green" action={()=> handleRequestAction("Accept")}/>
+            <Button
+              text="Accept"
+              bg_color="green"
+              action={() => handleRequestAction("Accept")}
+            />
           </div>
           <div className="request-accept">
-            <Button text="Decline" bg_color="red" action={()=> handleRequestAction("Decline")}/>
+            <Button
+              text="Decline"
+              bg_color="red"
+              action={() => handleRequestAction("Decline")}
+            />
           </div>
         </div>
-      ) : <div>
-        {request.accepted ? <div></div> : <div className='declined'>X Declined</div>}
-        </div>}
+      ) : (
+        <div>
+          {request.accepted ? (
+            <div></div>
+          ) : (
+            <div className="declined">X Declined</div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

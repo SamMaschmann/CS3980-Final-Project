@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import './calendar.css';
 function Calendar() {
   const [date, setDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date())
   const today = new Date()
 
   const months = [
@@ -44,13 +45,13 @@ function Calendar() {
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    const blanks = [];
+    const blanks: JSX.Element[] = [];
     for (let i = 0; i < firstDayOfMonth; i++) {
       console.log(isItToday(i))
       blanks.push(<td key={`blank-${i}`} className="calendar-day empty"></td>);
     }
 
-    const days = [];
+    const days: JSX.Element[] = [];
     for (let day = 1; day <= daysInMonth; day++) {
       days.push(
         <td
@@ -97,24 +98,27 @@ function Calendar() {
   };
 
   return (
-    <div className="calendar">
-      <div className="calendar-header">
-        <button onClick={handlePrevMonth}>Prev</button>
-        <span>{months[date.getMonth()]} {date.getFullYear()}</span>
-        <button onClick={handleNextMonth}>Next</button>
+    <div>
+      <div className="calendar">
+        <div className="calendar-header">
+          <button onClick={handlePrevMonth}>Prev</button>
+          <span>
+            {months[date.getMonth()]} {date.getFullYear()}
+          </span>
+          <button onClick={handleNextMonth}>Next</button>
+        </div>
+        <table className="calendar-table">
+          <thead>
+            <tr>
+              {daysOfWeek.map((day) => (
+                <th key={day}>{day}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>{renderCalendar()}</tbody>
+        </table>
       </div>
-      <table className="calendar-table">
-        <thead>
-          <tr>
-            {daysOfWeek.map(day => (
-              <th key={day}>{day}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {renderCalendar()}
-        </tbody>
-      </table>
+      <div>Scheduled Payments</div>
     </div>
   );
 }

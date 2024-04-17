@@ -7,6 +7,8 @@ export type Loan = {
     otherParty: string
     description: string
     amount: number
+    // not sure how documents are stored in mongo so just used strings for now
+    documents?: string[]
 }
 
 function Loans() {
@@ -15,7 +17,8 @@ function Loans() {
   const [loansList, setLoansList] = useState<Loan[]>([{
     otherParty: "Mike",
     description: "For the car",
-    amount: 5000
+    amount: 5000,
+    documents: ["Contract1.pdf"]
   }, {
     otherParty: "Carol",
     description: "For starting a restaurant",
