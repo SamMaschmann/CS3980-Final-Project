@@ -37,6 +37,22 @@ function Budget() {
     setExpenses(expenses.map(expense => expense.id === id ? updatedExpense : expense));
   };
 
+  const downloadExpenses = () => {
+    const logData = expenses
+      .map(expense => `${expense.name} - ${expense.amount}`)
+      .join('\n');
+
+    const blob = new Blob([logData], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'expenses.log';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  };
+
   const BudgetExpenses: React.FC<{ expenses: Expense[]; deleteExpense: (id: string) => void; editExpense: (id: string, updatedExpense: Expense) => void; }> = ({ expenses, deleteExpense, editExpense }) => {
     return (
       <div className="budget-expenses-container">
@@ -134,6 +150,9 @@ function Budget() {
         <BudgetExpenses expenses={expenses} deleteExpense={deleteExpense} editExpense={editExpense}/>
         <ExpenseForm addExpense={addExpense} />
         <BudgetPie expenses={expenses}/>
+        <button className="download-text" onClick={downloadExpenses}>
+          Download Expenses
+        </button>
       </div>
       
     </div>
