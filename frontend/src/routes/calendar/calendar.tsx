@@ -1,9 +1,21 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import './calendar.css';
-function Calendar() {
+
+interface Payment {
+  date: Date;
+  amount: number;
+  description: string;
+}
+
+const Calendar: React.FC = () => {
   const [date, setDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date())
-  const today = new Date()
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [payments, setPayments] = useState<Payment[]>([]);
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility
+  const [amount, setAmount] = useState(0);
+  const [description, setDescription] = useState('');
+
+  const today = new Date();
 
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -12,7 +24,18 @@ function Calendar() {
 
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  const dayWithEvents = [1, 9, 22]
+  const dayWithEvents = [1, 9, 22];
+
+  const addPayment = () => {
+    const payment: Payment = {
+      date: selectedDate,
+      amount,
+      description,
+    };
+    setPayments([...payments, payment]);
+    setShowModal(false); // Close modal after adding payment
+  };
+
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -36,8 +59,27 @@ function Calendar() {
   };
 
   const isItToday = (day: number) => {
-    return date.getMonth() == today.getMonth() && day == today.getDate() && date.getFullYear() == today.getFullYear()
-  }
+    return date.getMonth() === today.getMonth() && day === today.getDate() && date.getFullYear() === today.getFullYear();
+  };
+
+  const PaymentModal: React.FC = () => {
+    const handleSubmit = () => {
+      addPayment();
+    };
+
+    return (
+      <div className="modal">
+        <div className="modal-content">
+          <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+          <h2>Schedule Payment</h2>
+          <p>Date: {selectedDate.toLocaleDateString()}</p>
+          <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder="Amount" />
+          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
+          <button onClick={handleSubmit}>Schedule Payment</button>
+        </div>
+      </div>
+    );
+  };
 
   const renderCalendar = () => {
     const firstDayOfMonth = getFirstDayOfMonth(date);
@@ -47,7 +89,6 @@ function Calendar() {
 
     const blanks: JSX.Element[] = [];
     for (let i = 0; i < firstDayOfMonth; i++) {
-      console.log(isItToday(i))
       blanks.push(<td key={`blank-${i}`} className="calendar-day empty"></td>);
     }
 
@@ -60,13 +101,9 @@ function Calendar() {
             backgroundColor: isItToday(day) ? "var(--color-primary)" : "",
           }}
           className="calendar-day"
+          onClick={() => handleDateClick(day)} // Add onClick handler for date selection
         >
           {day}
-          {/* {dayWithEvents.includes(day) && (
-            <div className="calendar-num-container">
-              <div className="calendar-num">1</div>
-            </div>
-          )} */}
         </td>
       );
     }
@@ -97,6 +134,12 @@ function Calendar() {
     ));
   };
 
+  const handleDateClick = (day: number) => {
+    const selectedDate = new Date(date.getFullYear(), date.getMonth(), day);
+    setSelectedDate(selectedDate);
+    setShowModal(true); // Show modal when a date is clicked
+  };
+
   return (
     <div>
       <div className="calendar">
@@ -119,8 +162,17 @@ function Calendar() {
         </table>
       </div>
       <div>Scheduled Payments</div>
+      {/* Display scheduled payments */}
+      <ul>
+        {payments.map((payment, index) => (
+          <li key={index}>
+            {payment.date.toLocaleDateString()} - {payment.amount} - {payment.description}
+          </li>
+        ))}
+      </ul>
+      {showModal && <PaymentModal />}
     </div>
   );
-}
+};
 
 export default Calendar;
