@@ -90,24 +90,27 @@ class Budgets(Document):
 ### END OF DATABASE MODELS
 
 
+### AUTH
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
+
+
 
 class UserRequest(BaseModel):
     username: str
     password: str
     
 
-# don't return password
-class User(BaseModel):
-    id: int
-    username: str
     
     
 
    
     
 class TransactionRequest(BaseModel):
-    user: User
-    other_user: User
+    user: PydanticObjectId
+    other_user: PydanticObjectId
     amount: Amount
     description: Optional[str]
     # this field can likely be deleted later once db is set up

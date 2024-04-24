@@ -6,8 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from database.db import Settings
 # from routes.debts import debt_router
-from routes.transactions import transactions_router
 from routes.loans import loan_router
+from routes.users import user_router
 
 
 
@@ -36,8 +36,8 @@ app.add_middleware(
 )
 
 # app.include_router(debt_router)
-app.include_router(transactions_router)
 app.include_router(loan_router)
+app.include_router(user_router)
 
 
 if __name__ == "__main__":

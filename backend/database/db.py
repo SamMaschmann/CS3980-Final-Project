@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     
     # Don't add .env file to git
     DB_CONN: str = Field(default="")
-    # SECRET_KEY: str = Field(default="")
+    SECRET_KEY: str = Field(default="")
 
     model_config = SettingsConfigDict(env_file=".env")
 
@@ -50,9 +50,9 @@ class Database:
         if doc:
             return doc
         return False
-
-    async def get_all(self) -> list[Any]:
-        docs = await self.model.find_all().to_list()
+    
+    async def get_all(self, user_id) -> list[Any]:
+        docs = await self.model.find(self.model.user_id == user_id).to_list()
         return docs
 
     async def update(self, id: PydanticObjectId, body: BaseModel) -> Any:
