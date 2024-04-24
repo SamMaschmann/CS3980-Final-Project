@@ -2,13 +2,14 @@ import asyncio
 import json
 from typing import Any
 from beanie import PydanticObjectId, init_beanie
+import certifi
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 
-from pydantic import Field
+from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from models import Budgets, Loans, Payments, Transaction, Users
+from models.dataModels import Budgets, Loans, Payments, Transaction, Users
 
 
 ## STARTED FROM: https://github.com/changhuixu/CS3980-2024/blob/main/event_planner/planner/database/connection.py
@@ -21,6 +22,7 @@ class Settings(BaseSettings):
     #
     #
     # DB_CONN = "this_is_a_url_to_the_db"
+    # future tip, make sure it looks like this "mongodb+srv://user:pass@cluster.mongodb.net/database_name"
     
     # Don't add .env file to git
     DB_CONN: str = Field(default="")
@@ -29,7 +31,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env")
 
     async def initialize_database(self):
-        client = AsyncIOMotorClient(self.DATABASE_URL)
+        # idk why it needs the certifi line, but it won't work without it
+        client = AsyncIOMotorClient(self.DB_CONN, tlsCAFile=certifi.where())
         await init_beanie(
             database=client.get_default_database(), document_models=[Users, Loans, Payments, Budgets]
         )

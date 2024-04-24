@@ -1,5 +1,5 @@
 
-import datetime
+from datetime import datetime
 from enum import Enum
 from typing import Optional
 from beanie import Document, PydanticObjectId
@@ -45,15 +45,15 @@ class Users(Document):
     
 
 class Loans(Document):
-    user: Users
-    other_user_id: Users
+    user_id: PydanticObjectId 
+    other_user_id: PydanticObjectId
     # default to current time
     created_at: datetime = Field(default_factory=datetime.utcnow)
     original_amount: Amount
     current_amount: Amount
     description: str
     accepted: bool
-    status: LoanType
+    status: LoanType = LoanType.OPEN
     
 class PaymentPlan(BaseModel):
     start_date: datetime
@@ -64,7 +64,8 @@ class PaymentPlan(BaseModel):
 
 # This is where you would store loan payments and regular transactions
 class Payments(Document):
-    user: Users
+    user: PydanticObjectId
+    other_user_id: Optional[PydanticObjectId]
     loan: Optional[Loans]
     created_at: datetime = Field(default_factory=datetime.utcnow)
     amount: Amount
@@ -78,7 +79,7 @@ class BudgetCategory(BaseModel):
     percent: int
     
 class Budgets(Document):
-    user: Users
+    user: PydanticObjectId
     total_amount: Amount
     goal_percents: list[BudgetCategory]
     actual_percents: list[BudgetCategory]
@@ -116,4 +117,4 @@ class TransactionRequest(BaseModel):
 # adds extra stuff that would only be added in mongo
 class Transaction(TransactionRequest):
     _id: str
-    created_at: datetime.datetime
+    created_at: datetime
