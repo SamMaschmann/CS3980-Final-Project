@@ -31,9 +31,6 @@ class LoanType(str, Enum):
     CLOSED = "CLOSED",
     OPEN = "OPEN"
 
-class Amount(BaseModel):
-    amount_dollars: int
-    amount_cents: int
 
 class Users(Document):
     username: str
@@ -45,12 +42,12 @@ class Users(Document):
     
 
 class Loans(Document):
-    user_id: PydanticObjectId 
-    other_user_id: PydanticObjectId
+    user: str
+    other_user: Optional[str]
     # default to current time
     created_at: datetime = Field(default_factory=datetime.utcnow)
-    original_amount: Amount
-    current_amount: Amount
+    original_amount: int
+    current_amount: int
     description: str
     accepted: bool
     status: LoanType = LoanType.OPEN
@@ -59,19 +56,20 @@ class PaymentPlan(BaseModel):
     start_date: datetime
     end_date: datetime
     frequency_days: int
-    amount: Amount
+    amount: int
     
 
 # This is where you would store loan payments and regular transactions
 class Payments(Document):
-    user: PydanticObjectId
-    other_user_id: Optional[PydanticObjectId]
-    loan: Optional[Loans]
+    user: str
+    other_user: Optional[str]
+    loan_id: Optional[PydanticObjectId]
     created_at: datetime = Field(default_factory=datetime.utcnow)
-    amount: Amount
+    amount: int
     description: str
     # payment plan this payment is apart of ig?
     payment_plan: Optional[PaymentPlan]
+
     
 
 class BudgetCategory(BaseModel):
@@ -79,8 +77,8 @@ class BudgetCategory(BaseModel):
     percent: int
     
 class Budgets(Document):
-    user: PydanticObjectId
-    total_amount: Amount
+    user: str
+    total_amount: int
     goal_percents: list[BudgetCategory]
     actual_percents: list[BudgetCategory]
     start_date: datetime
@@ -97,6 +95,15 @@ class TokenResponse(BaseModel):
     token_type: str
 
 
+### REQUESTS 
+
+class PaymentRequest(BaseModel):
+    other_user: str
+    amount: int
+    description: Optional[str]
+    
+
+
 
 class UserRequest(BaseModel):
     username: str
@@ -105,19 +112,3 @@ class UserRequest(BaseModel):
 
     
     
-
-   
-    
-class TransactionRequest(BaseModel):
-    user: PydanticObjectId
-    other_user: PydanticObjectId
-    amount: Amount
-    description: Optional[str]
-    # this field can likely be deleted later once db is set up
-    outgoing: bool
-    
-
-# adds extra stuff that would only be added in mongo
-class Transaction(TransactionRequest):
-    _id: str
-    created_at: datetime

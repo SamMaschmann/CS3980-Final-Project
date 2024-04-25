@@ -19,8 +19,9 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("/api/login", { username, password });
-      const token = response.data.token; // Assuming your backend returns a token
+      const response = await axios.post("http://localhost:8000/signin", { username, password });
+      console.log(response)
+      const token = response.data.access_token; // Assuming your backend returns a token
       localStorage.setItem("token", token); // Store token in local storage
       navigate("/");
     } catch (error) {

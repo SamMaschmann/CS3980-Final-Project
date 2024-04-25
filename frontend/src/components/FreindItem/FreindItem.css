@@ -1,0 +1,38 @@
+.friend-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    justify-content: start;
+    background-color: whitesmoke;
+    margin: 1.2rem 3rem 0rem 3rem;
+    width: 30rem;
+
+}
+
+.friend-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.friend-unfollow {
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+    background-color: var(--color-danger);
+    border-radius: 0.5rem;
+    color: white;
+
+}
+
+.friend-name {
+    font-size: 16pt;
+    display: flex;
+    margin-left: 2rem;
+
+}
+
+.friend-date {
+    font: italic;
+    color: gray;
+    display: flex;
+    margin-left: 2rem;
+}

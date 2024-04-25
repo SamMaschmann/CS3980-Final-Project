@@ -9,7 +9,7 @@ import os
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from models.dataModels import Budgets, Loans, Payments, Transaction, Users
+from models.dataModels import Budgets, Loans, Payments, Users
 
 
 ## STARTED FROM: https://github.com/changhuixu/CS3980-2024/blob/main/event_planner/planner/database/connection.py

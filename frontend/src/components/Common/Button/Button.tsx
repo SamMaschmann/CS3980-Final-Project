@@ -9,7 +9,7 @@ type ButtonProps = {
 
 function Button({text, action, bg_color}: ButtonProps) {
   return (
-    <button className={'button' + ` ${bg_color}`} onClick={()=> action && action()}>{text}</button>
+    <button  type="button" className={'button' + ` ${bg_color}`} onClick={()=> action && action()}>{text}</button>
   )
 }
 
