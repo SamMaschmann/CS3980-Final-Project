@@ -9,6 +9,7 @@ from database.db import Settings
 from routes.loans import loan_router
 from routes.users import user_router
 from routes.payments import payments_router
+from routes.budgets import budget_router
 
 
 
@@ -40,6 +41,7 @@ app.add_middleware(
 app.include_router(loan_router)
 app.include_router(user_router)
 app.include_router(payments_router)
+app.include_router(budget_router)
 
 
 if __name__ == "__main__":

@@ -5,9 +5,9 @@ from database.db import Database
 from models.dataModels import Loans, Users
 
 
-loan_router = APIRouter(tags=["Loans"])
+loan_router = APIRouter(tags=["Loans"]) # What does this do?
 
-loan_database = Database(Loans)
+loan_database = Database(Loans) 
 
 @loan_router.get("/loans", response_model=list[Loans])
 async def get_all_loans(user: Users = Depends(get_user)) -> list[Loans]:
