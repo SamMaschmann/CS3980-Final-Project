@@ -75,17 +75,18 @@ class Payments(Document):
 
     
 
-class BudgetCategory(BaseModel):
+class Expense(BaseModel):
+    name: str
     category: str
-    percent: int
-    
+    amount: int
+
+
+# "user_id":{"$oid": "5eb7cf5a86d9755df3a6c563"},
+# "items":"test"
+
 class Budgets(Document):
-    user: str
-    total_amount: int
-    goal_percents: list[BudgetCategory]
-    actual_percents: list[BudgetCategory]
-    start_date: datetime
-    end_date: datetime
+    user_id:PydanticObjectId
+    expenses: list[Expense]
     
 
 ### END OF DATABASE MODELS
