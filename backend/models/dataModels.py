@@ -84,9 +84,18 @@ class Expense(BaseModel):
 # "user_id":{"$oid": "5eb7cf5a86d9755df3a6c563"},
 # "items":"test"
 
+## We still need this to track the actual goals for the budget
+class BudgetCategory(BaseModel):
+    category: str
+    goal_percent: int
+    # actual percent can be calculated elsewhere
+
+    
+
 class Budgets(Document):
-    user_id:PydanticObjectId
+    user_id:  PydanticObjectId
     expenses: list[Expense]
+    budget_categories: list[BudgetCategory]
     
 
 ### END OF DATABASE MODELS

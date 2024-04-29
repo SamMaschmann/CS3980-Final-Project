@@ -3,7 +3,115 @@ This is the README file for the final project for CS:3980 for the Spring 2024 se
 This project serves as a web application for tracking personal debts.
 
 
+## TODO
+
+Backend 
+- [ ] Testing (required)
+    - [ ] Setup pytest 
+    - [ ] Implement testing using https://fastapi.tiangolo.com/tutorial/testing/
+- [ ] Logs (required)
+    - [ ] Implement logging to file, see teacher's Github for examples
+- Admin features (required)
+    - [ ] Allow admin to block users from doing transactions / other abilities
+- [ ] Features
+    - [x] Account creation
+        - [x] Sign in
+        - [x] Sign up
+    - [ ] Payments
+        - [ ] Ability to create payment 
+            - [ ] For loan
+            - [x] For regular transaction 
+        - [ ] Ability to approve payment
+            - [ ] Change getting payments to only show ones that are approved
+        - [ ] Ability to download record of payments (half-done) (required)
+        - [ ] Ability to make payment plans (stretch goal)
+        - [ ] Uploading transactions records
+    - [ ] Loans
+        - [ ] Ability to upload documents with loan (required)
+        - [ ] Create loan
+        - [ ] Ability to change loan status, from open to closed 
+        - [ ] Cancel loan (only available for user who gave the loan if from another user)
+        - [ ] Edit loan details (^^)
+    - [ ] Budget
+        - [ ] Ability to create a budget
+            - [x] Ability to add expense
+            - [ ] Adding category
+            - [ ] Adding initial budget object (just no expenses)
+        - [ ] Ability to edit a budget
+            - [ ] Edit expense
+            - [ ] Edit budget categories, name and %
+        - [x] Getting budget data for user
+            - [ ] Handle if user has multiple budgets, could only allow one if we want
+        - [ ] Deleting budget
+    - [ ] Users
+        - [x] Add friends
+        - [ ] Get friends
+        - [x] Remove friends
+        - [ ] Block people
+
+Frontend
+- [ ] Features
+    - [ ] Dashboard ()
+        - [ ] Add summary stuff to dashboard
+            - [ ] Total transactions?
+            - [ ] Expense graphs from budget (ok if they repeat)
+            - [ ] If budget is on track 
+            - [ ] etc
+    - [ ] Transactions
+        - [ ] Clean up UI
+            - [ ] Styled form
+        - [ ] Fix columns for incoming and outgoing 
+        - **Note: don't need remove / edit, only maybe applicable for admin users
+        - [ ] Fetch all users list and make form username field a select from existing users
+    - [ ] Loans
+        - Clean up UI
+            - [ ] Styled form
+        - [ ] Add ability to delete / edit (if allowed)
+        - [ ] Fetch all users list and make form username field a select from existing users
+        - [ ] Add field to form to upload documents
+        - [ ] Add ability to download / delete loan documents 
+    - [ ] Calendar (this might need to be cut for time)
+        - [ ] If we do payment plans add those 
+    - [ ] Friends
+        - [ ] Add form to add friend 
+            - [ ] Fetch list of users and use select
+        - [ ] Add ability to quickly send transaction
+        - [ ] Add ability to unfollow 
+        - [ ] Add delete 
+        - [ ] Clean up UI
+    - [ ] Requests 
+        - [ ] Add ability to approve payment 
+        - [ ] Add ability to delete your requests 
+    - [ ] General
+        - [x] Make it so user can't see data unless they're signed in 
+        - [ ] Redirect to login page if not signed in 
+        - [ ] General UI cleanup
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+Frontend
+
+
+
+
+
+
 ## How to Run
+
+This application has a separate server for the frontend and backend. To run the full applications both must be running on the same computer on localhost.
+
+### Backend
 First, create a virtual environment with
 `python -m venv venv`,
 and open it with
@@ -15,47 +123,21 @@ Then install the necessary packages with
 Finally, start the program with
 `uvicorn main:app --port 8000 --reload`.
 
-Then just open localhost:8000 and you should see the webpage.
+### Frontend 
+First, install the packages with
+`npm install`
+then run the frontend using 
+`npm run dev`
+
+To create a build of the frontend that can be deployed as a static site you can run 
+`npm run build`
+
 
 
 ## main.py
 This is the Python code that runs the website. It uses FastAPI for the app and Starlette for the file responses.
 
-## debtModel.py
-This is the python code that defines the structure for a debt object and a debt request.
-
-## debtTracker.py
-This is the python code that serves as the main router for the application. When an HTTP request is sent in, this is the file that handles the request and sneds out the necessary information.
-
 ## Frontend
 
-### HTML
-index.html: This is the html for the main page for this project. It has a table that get populated with the entries the user gives on addDebt.html
-
-addDebt.html: This is the html for the form page that creates a debt object for the application.
-
-updateDebt.html: This is the html for the form page that updates a debt object in the application.
-
-### CSS
-style.css: This is the style sheet for the HTML files. It centers the elements, adds borders to the table, and makes the buttons look nicer.
-
-### Java Script
-debts.js: This is the Javascript file that communicates between the HTML pages and the server by sending XML HTTP Requests. It is responsible for fetching and sending information to the server, as well as populating the table in the HTML page.
 
 ## Pictures
-![Empty Table](/pics/pywebMt_empty.JPG)
-This is what the main page looks like before any debts have been entered.
-#
-
-![Add New Debt Form](/pics/pywebMt_new.JPG)
-This is the form that is filled out in order to enter a debt.
-#
-
-![Filled in Table](/pics/pywebMt_filled.JPG)
-
-This is what the main page looks like with a few entries added.
-#
-
-![Update Debt Form](/pics/pywebMt_update.JPG)
-
-This is the form that is filled out in order to update a debt.
