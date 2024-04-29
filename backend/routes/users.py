@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel
 
 from auth.hash import HashPassword
-from auth.jwt import create_access_token
+from auth.jwt import create_access_token, verify_access_token
 from auth.auth import get_user
 from database.db import Database
 from models.dataModels import TokenResponse, UserRequest, UserResponse, Users
@@ -56,6 +57,15 @@ async def signin_user(user: UserRequest) -> dict:
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid login"
     )
+    
+
+# need this for it to behave
+class Token(BaseModel):
+    token: str
+    
+@user_router.post("/check_token")
+async def check_token(token: Token):
+    return verify_access_token(token.token)
     
 @user_router.get("/users", response_model=UserResponse)
 async def get_users() -> list[Users]:
@@ -116,6 +126,7 @@ async def remove_friend(friend_username: str, user: Users = Depends(get_user)) -
         )
         
     return {"message": f"Friend with username {friend_username} successfully deleted"}
-    
+
+
 
 

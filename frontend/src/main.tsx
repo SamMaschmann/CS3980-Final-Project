@@ -15,6 +15,7 @@ import Dashboard from "./routes/dashboard/dashboard.tsx";
 import Calendar from "./routes/calendar/calendar.tsx";
 import Login from "./routes/login/login.tsx";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import AuthenticatedRoute from "./components/AuthenticatedRoute/AuthenticatedRoute.tsx";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -22,7 +23,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <AuthenticatedRoute />,
     errorElement: <ErrorPage />,
     children: [
       {

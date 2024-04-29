@@ -87,25 +87,6 @@ Frontend
         - [ ] Redirect to login page if not signed in 
         - [ ] General UI cleanup
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-Frontend
-
-
-
-
-
 
 ## How to Run
 
