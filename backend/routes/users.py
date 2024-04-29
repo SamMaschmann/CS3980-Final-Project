@@ -1,9 +1,10 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 
 from auth.hash import HashPassword
 from auth.jwt import create_access_token
+from auth.auth import get_user
 from database.db import Database
-from models.dataModels import TokenResponse, UserRequest, Users
+from models.dataModels import TokenResponse, UserRequest, UserResponse, Users
 from fastapi import status
 
 
@@ -55,6 +56,66 @@ async def signin_user(user: UserRequest) -> dict:
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid login"
     )
+    
+@user_router.get("/users", response_model=UserResponse)
+async def get_users() -> list[Users]:
+    # not protected because anyone can see all users 
+    users = await Users.find().to_list()
+    
+    return users
+
+# get the usernames of a user's friends
+@user_router.get("/users/friends", response_model=UserResponse)
+async def get_friends(user: Users = Depends(get_user)) -> list[str]:
+    return user.friends
+
+@user_router.post("/users/friends")
+async def add_friend(friend_username: str, user: Users = Depends(get_user)) -> dict:
+    # check to see if user being added exists 
+    exists = await Users.find_one(Users.username == friend_username)
+    
+    if not exists:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User with this username does not exist.",
+        )
+        
+    # check to see if user is already in friend's list 
+    if friend_username not in user.friends:
+        user.friends.append(friend_username)
+        user_database.update(user.id, user)
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="User with this username is already a friend"
+        )
+        
+    return {"message": f"Friend with username {friend_username} successfully added"}
+    
+
+@user_router.delete("/users/friends")
+async def remove_friend(friend_username: str, user: Users = Depends(get_user)) -> dict:
+    # check to see if user being added exists 
+    exists = await Users.find_one(Users.username == friend_username)
+    
+    if not exists:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User with this username does not exist.",
+        )
+        
+    # check to see if user is already in friend's list 
+    if friend_username in user.friends:
+        idx = user.friends.index(friend_username)
+        del user.friends[idx]
+        user_database.update(user.id, user)
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="User with this username is not a friend"
+        )
+        
+    return {"message": f"Friend with username {friend_username} successfully deleted"}
     
 
 

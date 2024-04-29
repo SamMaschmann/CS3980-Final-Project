@@ -31,14 +31,17 @@ class LoanType(str, Enum):
     CLOSED = "CLOSED",
     OPEN = "OPEN"
 
+# Users are uniquely identified by their usernames 
 
 class Users(Document):
     username: str
     password: str
     # default to current time
     created_at: datetime = Field(default_factory=datetime.utcnow)
-    blocked_user_ids: list[str]
+    blocked_users: list[str]
     user_type: UserType
+    friends: Optional[list[str]]
+    
     
 
 class Loans(Document):
@@ -104,10 +107,17 @@ class PaymentRequest(BaseModel):
     
 
 
-
 class UserRequest(BaseModel):
     username: str
     password: str
+    
+
+### RESPONSES
+
+class UserResponse(BaseModel):
+    id: PydanticObjectId
+    username: str
+    user_type: UserType
     
 
     
