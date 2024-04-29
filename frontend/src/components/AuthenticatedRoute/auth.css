@@ -1,0 +1,26 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* No default button styles*/
+button{
+    background: transparent;
+    border: none;
+}
+button:focus{
+    outline: none;
+    border: none;
+}
+
+.body-container {
+  display: flex;
+}
+
+.page-content {
+  width: 100%;
+  height: 100%;
+}
+
+

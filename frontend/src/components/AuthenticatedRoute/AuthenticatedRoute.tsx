@@ -3,6 +3,7 @@ import { Navigate, Outlet, useLocation } from "react-router";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import axios from "axios";
+import "./auth.css"
 
 function AuthenticatedRoute() {
   // TODO: replace this with something more secure

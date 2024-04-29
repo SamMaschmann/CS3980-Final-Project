@@ -84,7 +84,7 @@ Frontend
         - [ ] Add ability to delete your requests 
     - [ ] General
         - [x] Make it so user can't see data unless they're signed in 
-        - [ ] Redirect to login page if not signed in 
+        - [x] Redirect to login page if not signed in 
         - [ ] General UI cleanup
 
 
