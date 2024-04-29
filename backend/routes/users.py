@@ -67,22 +67,28 @@ class Token(BaseModel):
 async def check_token(token: Token):
     return verify_access_token(token.token)
     
-@user_router.get("/users", response_model=UserResponse)
+@user_router.get("/users", response_model=list[str])
 async def get_users() -> list[Users]:
     # not protected because anyone can see all users 
     users = await Users.find().to_list()
-    
+    # just return usernames
+    users = [x.username for x in users]
     return users
 
 # get the usernames of a user's friends
-@user_router.get("/users/friends", response_model=UserResponse)
+@user_router.get("/users/friends", )
 async def get_friends(user: Users = Depends(get_user)) -> list[str]:
     return user.friends
 
+
+# need this to send data right
+class FriendAddRequest(BaseModel):
+    friend_username: str
+
 @user_router.post("/users/friends")
-async def add_friend(friend_username: str, user: Users = Depends(get_user)) -> dict:
+async def add_friend(friend_username: FriendAddRequest, user: Users = Depends(get_user)) -> dict:
     # check to see if user being added exists 
-    exists = await Users.find_one(Users.username == friend_username)
+    exists = await Users.find_one(Users.username == friend_username.friend_username)
     
     if not exists:
         raise HTTPException(
@@ -93,7 +99,7 @@ async def add_friend(friend_username: str, user: Users = Depends(get_user)) -> d
     # check to see if user is already in friend's list 
     if friend_username not in user.friends:
         user.friends.append(friend_username)
-        user_database.update(user.id, user)
+        user.save()
     else:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -105,7 +111,6 @@ async def add_friend(friend_username: str, user: Users = Depends(get_user)) -> d
 
 @user_router.delete("/users/friends")
 async def remove_friend(friend_username: str, user: Users = Depends(get_user)) -> dict:
-    # check to see if user being added exists 
     exists = await Users.find_one(Users.username == friend_username)
     
     if not exists:
@@ -118,7 +123,7 @@ async def remove_friend(friend_username: str, user: Users = Depends(get_user)) -
     if friend_username in user.friends:
         idx = user.friends.index(friend_username)
         del user.friends[idx]
-        user_database.update(user.id, user)
+        await user.save()
     else:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,

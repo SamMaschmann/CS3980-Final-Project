@@ -125,7 +125,6 @@ class UserRequest(BaseModel):
 ### RESPONSES
 
 class UserResponse(BaseModel):
-    id: PydanticObjectId
     username: str
     user_type: UserType
     
