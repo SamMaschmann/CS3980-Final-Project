@@ -39,7 +39,7 @@ class Users(Document):
     # default to current time
     created_at: datetime = Field(default_factory=datetime.utcnow)
     blocked_users: Optional[list[str]] = []
-    user_type: UserType
+    user_type: UserType = UserType.USER
     friends: Optional[list[str]] = []
     
     

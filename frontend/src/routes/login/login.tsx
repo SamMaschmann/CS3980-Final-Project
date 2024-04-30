@@ -32,7 +32,7 @@ function Login() {
 
   const handleSignup = async () => {
     dispatch(signup({username, password}))
-    alert(user)
+    navigate("/")
   }
 
   return (
