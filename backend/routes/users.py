@@ -18,7 +18,7 @@ user_database = Database(Users)
 hash_password = HashPassword()
 
 @user_router.post("/signup")
-async def signup_user(user: Users) -> dict:
+async def signup_user(user: UserRequest) -> dict:
     
     logger.info("[post /signup] Creating user " + user.username)
 
@@ -34,9 +34,9 @@ async def signup_user(user: Users) -> dict:
     # hash password before storing it 
     hashed_password = hash_password.create_hash(user.password)
     
-    user.password = hashed_password
+    new_user = Users(username=user.username, password=hashed_password)
     
-    await user_database.save(user)
+    await user_database.save(new_user)
     
     return {"message": "User was created"}
 
