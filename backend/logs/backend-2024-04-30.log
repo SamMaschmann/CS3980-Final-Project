@@ -1,0 +1,7 @@
+2024-04-30 13:55:12,639: __main__: INFO - Starting backend
+2024-04-30 13:55:39,642: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 13:55:39,951: routes.users: INFO - [post /signin] Successfully signed in user test_user

@@ -1,10 +1,13 @@
 import logging
+from datetime import date
+
 def setup_logging():
+    curDate = date.today()
     logger = logging.getLogger()
     if not logger.hasHandlers():  # Check if the root logger already has handlers
         logging.basicConfig(
             level=logging.INFO,
-            filename="backend.log",
+            filename=f"./logs/backend-{curDate}.log",
             format="%(asctime)s: %(name)s: %(levelname).4s - %(message)s"
         )
         
