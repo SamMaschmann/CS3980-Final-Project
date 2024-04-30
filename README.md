@@ -41,7 +41,7 @@ Backend
             - [ ] Edit expense
             - [ ] Edit budget categories, name and %
         - [x] Getting budget data for user
-            - [ ] Handle if user has multiple budgets, could only allow one if we want
+            - ~~[ ] Handle if user has multiple budgets~~
         - [ ] Deleting budget
     - [ ] Users
         - [x] Add friends
