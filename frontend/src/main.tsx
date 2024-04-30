@@ -11,7 +11,6 @@ import Budget from "./routes/budget/budget.tsx";
 import Friends from "./routes/friends/friends.tsx";
 import Loans from "./routes/loans/loans.tsx";
 import Requests from "./routes/requests/requests.tsx";
-import Dashboard from "./routes/dashboard/dashboard.tsx";
 import Calendar from "./routes/calendar/calendar.tsx";
 import Login from "./routes/login/login.tsx";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -26,11 +25,6 @@ const router = createBrowserRouter([
     element: <AuthenticatedRoute />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Dashboard />,
-      },
-
       {
         path: "transactions",
         element: <Transactions />,

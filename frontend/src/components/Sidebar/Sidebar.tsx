@@ -3,21 +3,20 @@ import "./Sidebar.css";
 import { capitalizeFirstLetter } from "../../helpers/strings";
 
 function Sidebar() {
-  const [selected, setSelected] = useState("Dashboard");
+  const [selected, setSelected] = useState("Transactions");
 
   useEffect(() => {
     const page = window.location.pathname.substring(1);
 
-    // if url is "/" set Dashboard as selected
+    // if url is "/" set Transactions as selected
     if (page) {
       setSelected(capitalizeFirstLetter(page));
     } else {
-      setSelected("Dashboard");
+      setSelected("Transactions");
     }
   });
 
   const categories = [
-    "Dashboard",
     "Transactions",
     "Budget",
     "Friends",
@@ -29,7 +28,7 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
       {categories.map((category) => (
-        <a href={category !== "Dashboard" ? `/${category.toLowerCase()}` : "/"} key={category}>
+        <a href={category !== "" ? `/${category.toLowerCase()}` : "/"} key={category}>
           <button
             className={
               "sidebar-item" + (category === selected ? " selected" : "")
