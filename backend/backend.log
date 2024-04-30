@@ -1,0 +1,28 @@
+2024-04-29 23:18:26,210: __main__: INFO - Starting backend
+2024-04-29 23:19:28,372: __main__: INFO - Starting backend
+2024-04-29 23:19:45,854: __main__: INFO - Starting backend
+2024-04-30 00:16:48,183: __main__: INFO - Starting backend
+2024-04-30 00:20:19,472: __main__: INFO - Starting backend
+2024-04-30 00:26:52,187: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 00:30:31,640: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:38:30,307: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:40:43,912: __main__: INFO - Starting backend
+2024-04-30 00:40:51,049: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:42:01,085: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:47:34,838: __main__: INFO - Starting backend
+2024-04-30 00:47:44,283: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:48:44,145: __main__: INFO - Starting backend
+2024-04-30 00:49:02,363: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:49:06,233: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:51:15,423: __main__: INFO - Starting backend
+2024-04-30 00:51:32,541: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:52:07,896: __main__: INFO - Starting backend
+2024-04-30 00:52:14,135: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:53:41,487: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 00:55:07,739: __main__: INFO - Starting backend
+2024-04-30 00:55:13,815: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 00:55:13,880: database.db: INFO - Fetched 0 documents from mongoDB
