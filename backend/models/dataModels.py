@@ -85,18 +85,16 @@ class Expense(BaseModel):
 # "items":"test"
 
 ## We still need this to track the actual goals for the budget
-class BudgetCategory(BaseModel):
-    category: str
-    goal_percent: int
+# class BudgetCategory(BaseModel):
+#     category: str
+#     goal_percent: int
     # actual percent can be calculated elsewhere
 
     
 
 class Budgets(Document):
     user_id:  PydanticObjectId
-    expenses: list[Expense]
-    budget_categories: list[BudgetCategory]
-    
+    expenses: list[Expense] 
 
 ### END OF DATABASE MODELS
 

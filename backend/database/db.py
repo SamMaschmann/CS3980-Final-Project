@@ -1,6 +1,6 @@
 import asyncio
 import json
-from typing import Any
+from typing import Any, Optional
 from beanie import PydanticObjectId, init_beanie
 import certifi
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -56,16 +56,20 @@ class Database:
         return False
     
     async def get_all(self, username) -> list[Any]:
-        docs = await self.model.find(self.model.user == username).to_list()
+        docs = await self.model.find(self.model.user_id == username).to_list()
         logger.info(f"Fetched {len(docs)} documents from mongoDB")
         return docs
 
-    async def update(self, id: PydanticObjectId, body: BaseModel) -> Any:
-        logger.info("Updating document from mongoDB")
-        doc_id = id
+    async def update(self, id: PydanticObjectId, body: BaseModel, exclude_fields: Optional[list[str]] = None) -> Any:
+        logger.info(f"Updating document from mongoDB {id}")
         des_body = body.model_dump_json(exclude_defaults=True)
         des_body = json.loads(des_body)
-        doc = await self.get(doc_id)
+
+        # Avoid updating fields in exclude_fields (id, user_id, etc)
+        for s in exclude_fields:
+            des_body.pop(s, None)
+
+        doc = await self.get(id)
         if not doc:
             return False
         await doc.set(des_body)

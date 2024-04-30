@@ -5,3 +5,134 @@ Traceback (most recent call last):
     version = _bcrypt.__about__.__version__
 AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 13:55:39,951: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 14:03:43,563: __main__: INFO - Starting backend
+2024-04-30 14:03:59,071: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 14:05:17,820: __main__: INFO - Starting backend
+2024-04-30 14:07:50,652: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 14:07:50,952: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 14:12:05,199: __main__: INFO - Starting backend
+2024-04-30 14:18:45,484: __main__: INFO - Starting backend
+2024-04-30 14:18:58,989: __main__: INFO - Starting backend
+2024-04-30 14:21:38,742: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 14:25:34,280: __main__: INFO - Starting backend
+2024-04-30 14:25:45,126: __main__: INFO - Starting backend
+2024-04-30 14:25:55,774: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 14:25:55,805: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:30:02,393: __main__: INFO - Starting backend
+2024-04-30 14:31:29,619: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 14:31:29,658: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:32:03,029: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:32:03,069: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:41:06,624: __main__: INFO - Starting backend
+2024-04-30 14:41:14,955: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:41:14,987: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:41:14,988: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:41:41,547: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:41:41,587: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 14:41:41,587: database.db: INFO - Updating document from mongoDB
+2024-04-30 14:41:41,590: database.db: INFO - Fetching document from mongoDB
+2024-04-30 14:42:36,783: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:42:36,816: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:43:02,647: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:43:02,682: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:43:02,682: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:44:00,104: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:44:00,154: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:44:00,154: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:45:09,980: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:45:10,017: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:45:10,017: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:45:47,443: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:45:47,563: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:45:47,563: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:49:28,365: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 14:49:28,366: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:49:28,366: database.db: INFO - Updating document from mongoDB
+2024-04-30 14:49:28,366: database.db: INFO - Fetching document from mongoDB
+2024-04-30 14:51:14,929: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:51:14,939: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 14:51:14,939: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:55:46,928: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:55:46,929: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 14:55:46,929: database.db: INFO - Saving document to mongoDB
+2024-04-30 14:55:54,415: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 14:55:54,415: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 14:55:54,415: database.db: INFO - Updating document from mongoDB
+2024-04-30 14:55:54,415: database.db: INFO - Fetching document from mongoDB
+2024-04-30 14:56:02,622: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 14:56:02,624: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 14:56:02,624: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:00:50,860: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:00:50,861: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:00:50,861: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:00:54,502: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 15:00:54,502: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 15:00:54,502: database.db: INFO - Updating document from mongoDB
+2024-04-30 15:00:54,502: database.db: INFO - Fetching document from mongoDB
+2024-04-30 15:01:34,460: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:01:34,461: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:01:34,461: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:01:38,114: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 15:01:38,124: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 15:01:38,124: database.db: INFO - Updating document from mongoDB
+2024-04-30 15:01:38,125: database.db: INFO - Fetching document from mongoDB
+2024-04-30 15:02:37,084: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:02:37,084: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:02:37,085: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:02:42,471: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 15:02:42,479: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 15:02:42,480: database.db: INFO - Updating document from mongoDB
+2024-04-30 15:02:42,480: database.db: INFO - Fetching document from mongoDB
+2024-04-30 15:03:27,469: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:03:27,469: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:03:27,469: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:03:32,580: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 15:03:32,593: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 15:03:32,593: database.db: INFO - Updating document from mongoDB 66314e8f1cf48a64be4c885f
+2024-04-30 15:03:32,593: database.db: INFO - Fetching document from mongoDB
+2024-04-30 15:04:38,936: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:04:38,950: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:04:38,950: database.db: INFO - Saving document to mongoDB
+2024-04-30 15:07:18,860: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:07:18,861: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:09:41,547: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 15:09:41,886: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 15:09:54,695: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 15:09:54,696: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 15:09:54,696: database.db: INFO - Saving document to mongoDB
+2024-04-30 16:01:53,994: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:01:53,995: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 16:01:53,995: database.db: INFO - Updating document from mongoDB 66315012c41d45e67ffbf720
+2024-04-30 16:01:53,995: database.db: INFO - Fetching document from mongoDB
+2024-04-30 16:02:19,590: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 16:02:19,591: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 16:02:19,591: database.db: INFO - Saving document to mongoDB
+2024-04-30 16:02:26,308: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:02:26,308: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 16:02:26,308: database.db: INFO - Updating document from mongoDB 66315c5b7beca49dddcf19bc
+2024-04-30 16:02:26,309: database.db: INFO - Fetching document from mongoDB
+2024-04-30 16:26:33,002: __main__: INFO - Starting backend
+2024-04-30 16:26:41,448: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 16:26:41,741: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 16:26:53,097: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 16:26:53,097: routes.budgets: INFO - [post /budgets] user has no budget, creating onetest_user
+2024-04-30 16:26:53,098: database.db: INFO - Saving document to mongoDB
+2024-04-30 16:27:01,223: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:27:01,224: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 16:27:01,224: database.db: INFO - Updating document from mongoDB 6631621d312ecd3101651762
+2024-04-30 16:27:01,224: database.db: INFO - Fetching document from mongoDB
+2024-04-30 16:29:42,885: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 16:30:42,389: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 16:30:42,451: database.db: INFO - Fetched 1 documents from mongoDB

@@ -23,16 +23,19 @@ async def get_budget(user: Users = Depends(get_user)):
 # Each user will have 1 budget
 @budget_router.post("/budgets")
 async def add_expense(body: Expense, user: Users = Depends(get_user)) -> dict:
-    logger.info("[post /budgets] Adding expense for user " + user.username)
     budgets = await budget_database.get_all(user.id)
-    if budgets != []:
+
+    if budgets == []:
+        logger.info("[post /budgets] user has no budget, creating one" + user.username)
+        budget = Budgets(user_id=user.id, expenses=[body])
+        print(budget)
+        await budget_database.save(budget)
+    else:
+        logger.info("[post /budgets] Adding expense for user " + user.username)
         budget = budgets[0]
         budget.expenses.append(body)
-        print(budget)
-        await budget_database.update(budget.id, budget)
-    else:
-        budget = Budgets(user_id=user.id, expenses=[body])
-        await budget_database.save(budget)
+        await budget_database.update(budget.id, budget, ["id", "user_id"])
+
 	
     return {"result": "success"}
 	
