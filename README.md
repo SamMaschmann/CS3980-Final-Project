@@ -9,8 +9,8 @@ Backend
 - [ ] Testing (required)
     - [ ] Setup pytest 
     - [ ] Implement testing using https://fastapi.tiangolo.com/tutorial/testing/
-- [ ] Logs (required)
-    - [ ] Implement logging to file, see teacher's Github for examples
+- [x] Logs (required)
+    - [x] Implement logging to file, see teacher's Github for examples
 - Admin features (required)
     - [ ] Allow admin to block users from doing transactions / other abilities
 - [ ] Features
