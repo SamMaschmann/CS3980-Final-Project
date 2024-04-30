@@ -76,6 +76,7 @@ class Payments(Document):
     
 
 class Expense(BaseModel):
+    id: PydanticObjectId
     name: str
     category: str
     amount: int
@@ -90,7 +91,7 @@ class Expense(BaseModel):
 #     goal_percent: int
     # actual percent can be calculated elsewhere
 
-    
+ 
 
 class Budgets(Document):
     user_id:  PydanticObjectId
@@ -104,6 +105,7 @@ class Budgets(Document):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
+    username: str
 
 
 ### REQUESTS 

@@ -136,3 +136,120 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 16:29:42,885: routes.users: INFO - [post /signin] Successfully signed in user test_user
 2024-04-30 16:30:42,389: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
 2024-04-30 16:30:42,451: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:36:41,627: routes.payments: INFO - [get /payments] Fetching payments for user test_user
+2024-04-30 16:36:41,805: routes.payments: INFO - [get /payments] Fetching payments for user test_user
+2024-04-30 16:37:28,925: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 16:37:28,992: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 16:38:17,549: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:17,553: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:17,607: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:18,811: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:18,816: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:18,869: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:18,947: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:20,699: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:20,705: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:20,761: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:20,930: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:20,937: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:20,988: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 16:38:21,014: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:38:26,190: routes.users: INFO - [post /users/friends] Successfully added friend for test_user
+2024-04-30 16:38:33,534: routes.payments: INFO - [get /payments] Fetching payments for user test_user
+2024-04-30 16:38:33,729: routes.payments: INFO - [get /payments] Fetching payments for user test_user
+2024-04-30 16:43:27,343: routes.users: INFO - [post /signup] Creating user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 16:43:27,423: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 16:43:27,676: database.db: INFO - Saving document to mongoDB
+2024-04-30 16:43:35,226: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 16:43:38,056: routes.users: INFO - [get /users/friends] Fetching friends of user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 16:43:38,070: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:43:38,126: routes.users: INFO - [get /users/friends] Fetching friends of user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 16:43:38,193: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 16:47:29,279: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 16:47:51,689: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:47:51,690: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 16:47:51,690: database.db: INFO - Updating document from mongoDB 6631621d312ecd3101651762
+2024-04-30 16:47:51,690: database.db: INFO - Fetching document from mongoDB
+2024-04-30 16:48:19,477: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 16:48:19,477: routes.budgets: INFO - [post /budgets] Adding expense for user test_user
+2024-04-30 16:48:19,478: database.db: INFO - Updating document from mongoDB 6631621d312ecd3101651762
+2024-04-30 16:48:19,478: database.db: INFO - Fetching document from mongoDB
+2024-04-30 18:15:58,751: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 18:16:09,419: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 18:16:09,475: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 18:18:07,375: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user test_user
+2024-04-30 18:18:07,446: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 18:18:32,838: __main__: INFO - Starting backend
+2024-04-30 18:18:46,506: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:18:46,790: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:18:55,970: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:18:56,035: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 18:19:40,621: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 18:19:40,621: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:19:40,621: database.db: INFO - Saving document to mongoDB
+2024-04-30 18:21:24,340: routes.users: INFO - [post /signin] Successfully signed in user test_user
+2024-04-30 18:24:05,050: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:24:05,110: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 18:25:59,205: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:25:59,272: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:26:20,156: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:26:20,221: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:26:23,142: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 18:26:23,147: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 18:26:23,197: routes.users: INFO - [get /users/friends] Fetching friends of user test_user
+2024-04-30 18:26:23,517: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 18:26:27,795: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:26:27,853: routes.loans: INFO - [get /loans] Fetching loans for user test_user
+2024-04-30 18:43:40,804: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:43:41,085: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:45:21,624: __main__: INFO - Starting backend
+2024-04-30 18:45:30,580: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:45:30,847: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:46:00,492: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:46:00,760: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:48:31,172: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:48:31,435: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:49:15,577: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:49:15,839: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:49:17,576: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:49:20,025: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:49:56,708: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:49:56,974: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:51:02,811: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 18:51:03,078: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
