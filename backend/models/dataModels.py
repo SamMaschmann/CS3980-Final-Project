@@ -115,6 +115,12 @@ class PaymentRequest(BaseModel):
     amount: int
     description: Optional[str]
     
+class LoanRequest(BaseModel):
+    user: str
+    other_user: str
+    amount: int
+    description: str
+    
 
 
 class UserRequest(BaseModel):

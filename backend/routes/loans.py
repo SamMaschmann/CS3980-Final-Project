@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from auth.auth import get_user
 from database.db import Database
-from models.dataModels import LoanUpdate, Loans, Users
+from models.dataModels import LoanRequest, LoanUpdate, Loans, Users
 from fastapi import status
 
 import logging
@@ -17,17 +17,19 @@ loan_database = Database(Loans)
 async def get_all_loans(user: Users = Depends(get_user)) -> list[Loans]:
     logger.info("[get /loans] Fetching loans for user " + user.username)
     
-    loans = await loan_database.get_all(user.id)
+    loans = await loan_database.get_all(user.username)
     
     return loans
 
 @loan_router.post("/loans")
-async def create_loan(body: Loans, user: Users = Depends(get_user)) -> dict:
+async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loans:
     logger.info("[post /loans] Adding loan for user " + user.username)
-    body.user_id = user.id
-    id = await loan_database.save(body)
+    body.user = user.username
     
-    return {"message": f"loan with id {id} was created"}
+    new_loan = Loans(user=user.username, other_user=body.other_user, current_amount=body.amount, original_amount=body.amount, accepted=False, description=body.description)
+    id = await loan_database.save(new_loan)
+    
+    return new_loan
 
 
 @loan_router.put("/loans/{id}")

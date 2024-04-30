@@ -55,8 +55,8 @@ class Database:
             return doc
         return False
     
-    async def get_all(self, user_id) -> list[Any]:
-        docs = await self.model.find(self.model.user_id == user_id).to_list()
+    async def get_all(self, username) -> list[Any]:
+        docs = await self.model.find(self.model.user == username).to_list()
         logger.info(f"Fetched {len(docs)} documents from mongoDB")
         return docs
 

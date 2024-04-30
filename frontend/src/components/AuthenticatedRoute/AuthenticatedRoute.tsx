@@ -19,9 +19,7 @@ function AuthenticatedRoute() {
     }
     checkToken();
   }, []);
-  const isAuthorized = localStorage.getItem("token");
   const location = useLocation();
-  console.log(isAuthorized);
   if (!verified) {
     //redirect to this route after login
     return (

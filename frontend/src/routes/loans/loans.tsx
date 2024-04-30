@@ -2,28 +2,46 @@ import React, { useState, useEffect } from 'react';
 import LoanItem from '../../components/LoanItem/LoanItem';
 import "./loans.css"
 import Button from '../../components/Common/Button/Button';
+import axios from 'axios';
+
+
+export type LoanType = "OPEN" | "CLOSED"
 
 export type Loan = {
-    otherParty: string
+    user: string
+    other_user: string
     description: string
-    amount: number
+    current_amount: number
+    original_amount: number
+    created_at: Date
+    status: LoanType
+    accepted: boolean
     // not sure how documents are stored in mongo so just used strings for now
     documents?: string[]
+}
+
+export type LoanRequest = {
+  description: string
+  amount: number
+  other_user: string
 }
 
 function Loans() {
   const [loanName, setLoanName] = useState('');
   const [loanAmount, setLoanAmount] = useState<string>("");
-  const [loansList, setLoansList] = useState<Loan[]>([{
-    otherParty: "Mike",
-    description: "For the car",
-    amount: 5000,
-    documents: ["Contract1.pdf"]
-  }, {
-    otherParty: "Carol",
-    description: "For starting a restaurant",
-    amount: 10000
-  }]);
+  const [loansList, setLoansList] = useState<Loan[]>([]);
+
+  useEffect(()=> {
+    async function fetchData() {
+      const res = await axios.get(`http://localhost:8000/loans?token=${localStorage.getItem("token")}`)
+      const data = await res.data
+
+      setLoansList(data)
+    }
+    fetchData()
+  }, [])
+
+    
 
   const handleLoanNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLoanName(event.target.value);
@@ -33,15 +51,21 @@ function Loans() {
     setLoanAmount(event.target.value);
   };
 
-  const handleAddLoan = () => {
+  const handleAddLoan = async () => {
     if (loanName.trim() !== '' && loanAmount.trim() !== '') {
       const newLoan = {
         description: loanName,
         amount: parseFloat(loanAmount),
-        otherParty: "Mandy"
+        // TODO: change this
+        other_user: "test_user",
+        user: ""
       };
+
+      await axios.post(`http://localhost:8000/loans?token=${localStorage.getItem("token")}`, newLoan)
+
+
       
-      setLoansList([...loansList, newLoan]);
+      // setLoansList([...loansList, newLoan]);
       // Clear input fields after adding loan
       setLoanName('');
       setLoanAmount('');
