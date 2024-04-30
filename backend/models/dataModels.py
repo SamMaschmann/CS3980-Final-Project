@@ -121,6 +121,7 @@ class UserRequest(BaseModel):
     username: str
     password: str
     
+    
 
 ### RESPONSES
 
@@ -129,5 +130,14 @@ class UserResponse(BaseModel):
     user_type: UserType
     
 
+### UPDATES
+
+class LoanUpdate(BaseModel):
+    other_user: Optional[str] = None
+    original_amount: int
+    current_amount: int
+    description: str
+    accepted: bool
+    status: LoanType
     
     
