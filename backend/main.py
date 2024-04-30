@@ -11,8 +11,10 @@ from routes.users import user_router
 from routes.payments import payments_router
 from routes.budgets import budget_router
 
-
-
+import logging
+import logging_config
+logging_config.setup_logging()
+logger = logging.getLogger(__name__)
 
 @lru_cache
 def get_settings():
@@ -45,6 +47,7 @@ app.include_router(budget_router)
 
 
 if __name__ == "__main__":
+    logger.info("Starting backend")
     uvicorn.run("main:app", reload=True)
 
 

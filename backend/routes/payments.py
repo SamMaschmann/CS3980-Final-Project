@@ -6,6 +6,9 @@ from auth.auth import get_user
 from database.db import Database
 from models.dataModels import PaymentRequest, Payments, Users
 
+import logging
+logger = logging.getLogger(__name__)
+
 payments_router = APIRouter(tags=["Payments"])
 
 payments_database = Database(Payments)
@@ -14,6 +17,7 @@ payments_database = Database(Payments)
 
 @payments_router.get("/payments")
 async def get_transactions(user: Users = Depends(get_user)) -> list[Payments]:
+    logger.info("[get /payments] Fetching payments for user " + user.username)
     transactions_from = await Payments.find(Payments.user == user.username).to_list()
     transactions_to = await Payments.find(Payments.other_user == user.username).to_list()
     
@@ -25,6 +29,7 @@ async def get_transactions(user: Users = Depends(get_user)) -> list[Payments]:
 
 @payments_router.post("/payments", status_code=status.HTTP_201_CREATED)
 async def add_transaction(body: PaymentRequest, user: Users = Depends(get_user)) -> JSONResponse:
+    logger.info("[post /payments] Adding transaction for user " + user.username)
     new_transaction = Payments(user=user.username, other_user=body.other_user, amount=body.amount, description=body.description, loan_id=None, payment_plan=None)
     id = await payments_database.save(new_transaction)
     

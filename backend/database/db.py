@@ -11,6 +11,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from models.dataModels import Budgets, Loans, Payments, Users
 
+import logging
+logger = logging.getLogger(__name__)
 
 ## STARTED FROM: https://github.com/changhuixu/CS3980-2024/blob/main/event_planner/planner/database/connection.py
 
@@ -42,10 +44,12 @@ class Database:
         self.model = model
 
     async def save(self, document) -> PydanticObjectId:
+        logger.info("Saving document to mongoDB")
         m = await document.create()
         return m.id
 
     async def get(self, id: PydanticObjectId) -> Any:
+        logger.info("Fetching document from mongoDB")
         doc = await self.model.get(id)
         if doc:
             return doc
@@ -53,9 +57,11 @@ class Database:
     
     async def get_all(self, user_id) -> list[Any]:
         docs = await self.model.find(self.model.user_id == user_id).to_list()
+        logger.info(f"Fetched {len(docs)} documents from mongoDB")
         return docs
 
     async def update(self, id: PydanticObjectId, body: BaseModel) -> Any:
+        logger.info("Updating document from mongoDB")
         doc_id = id
         des_body = body.model_dump_json(exclude_defaults=True)
         des_body = json.loads(des_body)
@@ -68,8 +74,10 @@ class Database:
     async def delete(self, id: PydanticObjectId) -> bool:
         doc = await self.get(id)
         if not doc:
+            logger.info("Unsuccessfully deleted document in mongoDB")
             return False
         await doc.delete()
+        logger.info("Successfully deleted document from mongoDB")
         return True        
 
 
