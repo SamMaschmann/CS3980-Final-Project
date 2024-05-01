@@ -38,7 +38,7 @@ async def signup_user(user: UserRequest) -> dict:
     
     await user_database.save(new_user)
     
-    return {"message": "User was created"}
+    return {"message": "User was created", "username": user.username}
 
 @user_router.post("/signin", response_model=TokenResponse)
 async def signin_user(user: UserRequest) -> dict:
@@ -56,8 +56,8 @@ async def signin_user(user: UserRequest) -> dict:
     if hash_password.verify_hash(user.password, exists.password):
         logger.info("[post /signin] Successfully signed in user " + user.username)
         access_token = create_access_token(exists.username)
-        
-        return {"access_token": access_token, "token_type": "Bearer"}
+
+        return {"access_token": access_token, "token_type": "Bearer", "username":user.username}
     
     logger.info("[post /signin] Invalid login attempt: " + user.username)
     # otherwise invalid

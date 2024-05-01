@@ -13,6 +13,16 @@ export const signup = createAsyncThunk('auth/signup', async({username, password}
     }
 })
 
+export const signin = createAsyncThunk('auth/signin', async({username, password}: Record<string, string>, thunkAPI) => {
+    try {
+        const res = await axios.post('http://localhost:8000/signin', {username, password})
+        return res.data
+    } catch (err: any) {
+        console.log(err)
+        return thunkAPI.rejectWithValue(err.message)
+    }
+})
+
 
 interface UserState {
     user: string,
@@ -42,17 +52,32 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(signup.fulfilled, (state, action: PayloadAction<any>) => {
-                state.user = action.payload.user
+                state.user = action.payload.username
                 state.isLoggedIn = true
                 state.loading = false
                 state.error = null
             })
             .addCase(signup.pending, (state, action) => {
-                state.user = 'load'
                 state.loading = true
             })
             .addCase(signup.rejected, (state, action: PayloadAction<any>) => {
-                state.user = 'fail'
+                state.user = ''
+                state.loading = false
+                state. isLoggedIn = false
+                state.error = action.payload
+            })
+
+
+            .addCase(signin.fulfilled, (state, action: PayloadAction<any>) => {
+                state.user = action.payload.username
+                state.isLoggedIn = true
+                state.loading = false
+                state.error = null
+            })
+            .addCase(signin.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(signin.rejected, (state, action: PayloadAction<any>) => {
                 state.loading = false
                 state. isLoggedIn = false
                 state.error = action.payload
