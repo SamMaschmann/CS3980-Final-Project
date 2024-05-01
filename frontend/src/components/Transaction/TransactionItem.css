@@ -19,18 +19,17 @@
 
 .transaction-party {
     font-weight: 500;
-    margin-right: 15rem;
 }
 
 @media screen and (max-width: 992px) {
   .transaction-party {
-    margin-right: 8rem;
+    margin-right: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .transaction-party {
-    margin-right: 2rem;
+    margin-right: 0.5rem;
   }
 }
 

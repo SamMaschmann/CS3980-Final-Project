@@ -161,3 +161,419 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 09:39:09,880: database.db: INFO - Saving document to mongoDB
 2024-04-30 09:39:48,431: routes.loans: INFO - [post /loans] Adding loan for user jrenning
 2024-04-30 09:39:48,433: database.db: INFO - Saving document to mongoDB
+2024-04-30 12:40:45,549: __main__: INFO - Starting backend
+2024-04-30 12:41:13,004: routes.users: INFO - [post /signup] Creating user test_user3
+2024-04-30 12:41:13,077: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 12:41:14,155: database.db: INFO - Saving document to mongoDB
+2024-04-30 12:52:07,212: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 12:52:09,542: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 12:52:09,660: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 12:52:13,843: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 12:52:13,854: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 12:52:13,881: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 12:52:14,346: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 12:52:17,130: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:52:17,163: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 12:52:17,213: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:52:17,249: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 12:52:22,366: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:52:22,399: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 12:52:22,447: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:52:22,489: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 12:52:40,778: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 12:52:40,890: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 12:53:12,371: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:53:12,404: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 12:53:12,440: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 12:53:12,480: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 13:04:51,993: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,109: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,218: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,351: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,594: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,720: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,825: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:52,928: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,034: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,138: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,247: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,359: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,459: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,554: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,650: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:53,758: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:54,892: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:54,987: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,091: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,212: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,304: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,411: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,505: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,605: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,703: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,805: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:55,926: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,018: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,107: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,221: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,328: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,424: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,521: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,614: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,705: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,815: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:56,933: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,062: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,206: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,308: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,411: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,508: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,608: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,729: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,825: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:57,931: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,049: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,158: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,265: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,377: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,484: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,582: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,689: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,795: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:58,912: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:59,023: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:59,126: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:59,234: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:59,407: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:04:59,728: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,009: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,275: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,429: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,548: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,705: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,839: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:00,960: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,117: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,223: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,375: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,488: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,602: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,731: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,836: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:01,940: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,049: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,173: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,277: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,445: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,582: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,723: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,839: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:02,952: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,263: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,365: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,503: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,611: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,715: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,814: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:03,920: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,037: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,147: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,265: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,381: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,492: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,632: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,875: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:04,979: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,087: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,193: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,301: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,410: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,517: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,644: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,749: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,857: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:05,981: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,090: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,191: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,307: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,434: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,617: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,732: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,874: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:06,989: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,150: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,263: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,410: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,511: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,617: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,727: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,845: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:07,955: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,057: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,181: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,287: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,401: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,523: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,646: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,772: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:08,892: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,015: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,131: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,279: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,429: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,547: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,684: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,842: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:09,950: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,102: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,273: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,418: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,549: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,705: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,804: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:10,912: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:11,067: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:11,173: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:11,313: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:11,421: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:05:11,553: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:06:10,813: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:06:26,500: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:07:28,830: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:07:28,974: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:07:34,476: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:07,802: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:14,503: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:23,796: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:31,800: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:40,827: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:08:57,800: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:20,808: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:26,801: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:33,514: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:45,815: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:49,503: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:09:51,478: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:10:12,799: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:12:37,827: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:12:45,490: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:13:30,813: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:13:51,971: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:14:01,970: routes.payments: INFO - [post /payments] Adding transaction for user jrenning
+2024-04-30 13:14:01,971: database.db: INFO - Saving document to mongoDB
+2024-04-30 13:14:14,476: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:14:14,583: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:15:47,264: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:15:47,417: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:16:56,811: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:17:20,844: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:17:35,811: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:17:35,928: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:17:56,939: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:17:57,049: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:18:38,826: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:18:42,823: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:18:46,507: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:18:52,810: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:19:46,404: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:19:46,508: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:20:19,851: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:20:26,948: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:20:27,081: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:21:15,832: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:21:32,354: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:21:32,561: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:32:13,803: asyncio: ERRO - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\uvicorn\server.py:64>>
+2024-04-30 13:37:03,808: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:37:03,908: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:37:39,121: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:37:39,427: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:37:53,095: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 13:37:53,134: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 13:37:53,177: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 13:37:53,212: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 13:37:56,525: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:37:56,638: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:39:09,810: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:41:18,826: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:42:23,365: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:42:23,516: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:49:48,506: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 13:50:32,616: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 13:51:20,212: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 13:51:39,585: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 13:55:22,481: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 13:55:22,893: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 13:55:28,844: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 13:55:28,954: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:13,705: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 17:48:18,859: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:18,999: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:55,878: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:57,498: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:58,807: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:48:58,909: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:49:05,057: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:49:05,178: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:49:33,864: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:49:57,805: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:50:37,591: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:51:07,091: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:51:51,618: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:51:51,647: database.db: INFO - Updating document from mongoDB
+2024-04-30 17:51:51,650: database.db: INFO - Fetching document from mongoDB
+2024-04-30 17:51:51,727: routes.payments: INFO - Payment with id = 6629e9e7b726e31cae7fe6ee was updated
+2024-04-30 17:52:18,219: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:52:18,249: database.db: INFO - Updating document from mongoDB
+2024-04-30 17:52:18,249: database.db: INFO - Fetching document from mongoDB
+2024-04-30 17:52:18,326: routes.payments: INFO - Payment with id = 6629e9e7b726e31cae7fe6ee was updated
+2024-04-30 17:52:32,558: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:52:32,674: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:52:50,453: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:52:50,490: database.db: INFO - Updating document from mongoDB
+2024-04-30 17:52:50,491: database.db: INFO - Fetching document from mongoDB
+2024-04-30 17:52:50,551: routes.payments: INFO - Payment with id = 6629e9e7b726e31cae7fe6ee was updated
+2024-04-30 17:54:41,562: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 6629e9e7b726e31cae7fe6ee
+2024-04-30 17:54:41,600: database.db: INFO - Updating document from mongoDB
+2024-04-30 17:54:41,605: database.db: INFO - Fetching document from mongoDB
+2024-04-30 17:54:41,684: routes.payments: INFO - Payment with id = 6629e9e7b726e31cae7fe6ee was updated
+2024-04-30 17:54:48,434: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:54:48,558: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:55:18,012: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:55:18,122: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:55:49,362: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 17:55:49,397: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 17:55:49,446: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 17:55:49,480: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 17:55:59,893: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:55:59,996: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:56:52,608: routes.payments: INFO - User id=ObjectId('5eb7cf5a86d9755df3a6c593') revision_id=None username='jrenning' password='$2b$12$cHAt8nND1RlJFJo.EPk0FeslJxKz3memV4Kin6Us3pJCkSQVxU1D6' created_at=datetime.datetime(2024, 4, 24, 1, 55, 26, 559000) blocked_users=['string'] user_type=<UserType.ADMIN: 'ADMIN'> friends=[] is updating payment = 662a9f61bbf9d3cce229d105
+2024-04-30 17:56:52,645: database.db: INFO - Updating document from mongoDB
+2024-04-30 17:56:52,647: database.db: INFO - Fetching document from mongoDB
+2024-04-30 17:56:52,733: routes.payments: INFO - Payment with id = 662a9f61bbf9d3cce229d105 was updated
+2024-04-30 17:56:53,068: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:56:53,167: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:56:55,523: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:56:55,621: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:57:06,117: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 17:57:06,153: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 17:57:06,197: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 17:57:06,229: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 17:57:10,840: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 17:57:10,939: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:00:06,185: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:00:06,459: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:00:42,431: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 18:00:42,465: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 18:00:42,506: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 18:00:42,541: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 18:15:49,238: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:15:49,337: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:16:44,722: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 18:16:44,757: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 18:16:44,806: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 18:16:44,840: database.db: INFO - Fetched 3 documents from mongoDB
+2024-04-30 18:16:51,801: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:16:51,911: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:16:53,268: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:16:53,374: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:17:20,118: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:17:27,505: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:17:37,893: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:17:44,373: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:17:44,478: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:04,197: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:12,211: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:20,706: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:31,546: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:33,228: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:47,790: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:18:52,162: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:19:07,781: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:19:07,894: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:19:14,757: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:19:23,513: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:19:29,759: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:37,791: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:37,892: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:40,342: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:40,438: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:41,976: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:42,079: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:44,413: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:44,506: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:46,583: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:46,678: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:50,004: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:50,103: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:51,710: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:51,802: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:59,485: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:20:59,583: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:21:19,954: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:21:20,055: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:21:54,038: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:21:54,134: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:26:39,091: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:26:39,191: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 18:27:00,462: routes.payments: INFO - [post /payments] Adding transaction for user jrenning
+2024-04-30 19:05:47,288: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 19:05:48,357: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 19:05:53,659: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 19:05:53,912: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 19:06:20,330: routes.payments: INFO - [post /payments] Adding transaction for user jrenning
+2024-04-30 19:07:02,666: routes.payments: INFO - [post /payments] Adding transaction for user jrenning
+2024-04-30 19:07:09,704: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 19:07:10,154: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 19:42:52,079: __main__: INFO - Starting backend
+2024-04-30 20:04:11,862: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:04:13,494: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:13,625: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:27,668: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:04:28,006: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:28,109: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:31,030: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:04:31,323: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:31,431: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:33,463: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:04:33,728: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:33,833: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:39,517: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:04:39,776: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:04:39,877: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:05:03,469: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:05:03,910: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:05:04,029: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:10,635: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 20:06:11,620: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 20:06:16,378: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:16,487: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:19,993: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:06:20,291: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:20,397: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:38,045: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:06:38,881: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:06:38,998: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:07:54,517: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:07:58,224: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted

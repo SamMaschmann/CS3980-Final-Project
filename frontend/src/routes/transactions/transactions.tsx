@@ -40,49 +40,58 @@ function Transactions() {
     }, [])
 
     // Form state
-    const [formData, setFormData] = useState<TransactionRequest>({
-        other_user: "",
-        amount: 0,
-        description: "",
-    });
+    // const [formData, setFormData] = useState<TransactionRequest>({
+    //     other_user: "",
+    //     amount: 0,
+    //     description: "",
+    // });
 
     // Handle form submission
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
 
 
-        await axios.post(`http://localhost:8000/payments?token=${localStorage.getItem("token")}`, formData);
-        // Reset form data
-        setFormData({
-            other_user: "",
-            amount: 0,
-            description: "",
-        });
+    //     await axios.post(`http://localhost:8000/payments?token=${localStorage.getItem("token")}`, formData);
+    //     // Reset form data
+    //     setFormData({
+    //         other_user: "",
+    //         amount: 0,
+    //         description: "",
+    //     });
 
-        // send request to the backend 
+    //     // send request to the backend 
         
 
-    };
+    // };
 
     // Handle form field changes
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    //     const { name, value } = e.target;
+    //     setFormData({ ...formData, [name]: value });
+    // };
+
+    const incoming = transactions.filter((t)=> t.other_user == "jrenning")
+    const outgoing = transactions.filter((t)=> t.user == "jrenning")
 
     return (
-        <div className="transactions-container">
-            {/* Transaction list */}
-            <div>
-                <div className="transaction-title">Incoming</div>
-                {transactions.map((t, index) => (
-                    <TransactionItem key={index} {...t} />
-                ))}
-            </div>
+      <div className="transactions-container">
+        {/* Transaction list */}
+        <div>
+          <div className="transaction-title">Incoming</div>
+          {incoming.map((t, index) => (
+            <TransactionItem key={index} transaction={t} type='Incoming' />
+          ))}
+        </div>
+        <div>
+          <div className="transaction-title">Outgoing</div>
+          {outgoing.map((t, index) => (
+            <TransactionItem key={index} transaction={t} type="Outgoing" />
+          ))}
+        </div>
 
-            {/* Transaction form */}
-            <div>
-                <div className="transaction-title">Add Transaction</div>
+        {/* Transaction form */}
+        {/* <div> */}
+        {/* <div className="transaction-title">Add Transaction</div>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Other User:
@@ -100,8 +109,8 @@ function Transactions() {
                     </label>
                     <button type="submit">Add Transaction</button>
                 </form>
-            </div>
-        </div>
+            </div> */}
+      </div>
     );
 }
 

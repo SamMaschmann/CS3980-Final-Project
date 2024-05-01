@@ -3,38 +3,41 @@ import "./requests.css";
 import Button from "../../components/Common/Button/Button";
 import { User } from "../../global_types";
 import RequestItem from "../../components/RequestItem/RequestItem";
+import axios from "axios";
 
 export type Request = {
-  name: string;
+  _id: string
+  user: string;
+  other_user?: string;
   amount: number;
-  to: User;
-  from: User;
-  time_sent: Date;
+  created_at: string;
+  description: string;
   accepted: boolean;
+  state: "PENDING" | "DECLINED" | "ACCEPTED"
 };
+
+export type RequestRequest = {
+  other_user: string
+  amount: number
+  description: string
+}
 
 function Requests() {
   const [requestName, setRequestName] = useState("");
   const [requestAmount, setRequestAmount] = useState("");
-  const [requestsList, setRequestsList] = useState<Request[]>([
-    {
-      name: "Ticket",
-      to: { username: "Max", id: 1 },
-      from: { username: "You", id: 2 },
-      amount: 50,
-      time_sent: new Date(),
-      accepted: false,
-    },
-    {
-      name: "Coffee",
-      to: {username: "You", id: 2},
-      from: {username: "Max", id: 1},
-      amount: 10,
-      time_sent: new Date(),
-      accepted: false
-    }
-  ]);
+  const [requestDescription, setRequestDescription] = useState("")
+  const [requestsList, setRequestsList] = useState<Request[]>([]);
 
+  useEffect(()=> {
+    async function fetchData() {
+      const res = await axios.get(`http://localhost:8000/payments/all?token=${localStorage.getItem("token")}`)
+      const data = await res.data
+      setRequestsList(data)
+    }
+    fetchData()
+
+    console.log(requestsList)
+  }, [])
 
   const handleRequestNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -48,30 +51,40 @@ function Requests() {
     setRequestAmount(event.target.value);
   };
 
-  const handleAddRequest = () => {
+    const handleRequestDescriptionChange = (
+      event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+      setRequestDescription(event.target.value);
+    };
+
+  const handleAddRequest = async () => {
     if (requestName.trim() !== "" && requestAmount.trim() !== "") {
-      const newRequest = {
-        name: requestName,
+      const newRequest: RequestRequest = {
+        other_user: requestName,
         amount: parseFloat(requestAmount),
-        time_sent: new Date(),
-        accepted: false,
-        to: { id: 1, username: "Kieran" },
-        from: { id: 2, username: "You" },
+        description: requestDescription
       };
-      setRequestsList([...requestsList, newRequest]);
+
+      // send to backend
+      await axios.post(
+        `http://localhost:8000/payments?token=${localStorage.getItem("token")}`
+      , newRequest);
+      // setRequestsList([...requestsList, newRequest]);
       // Clear input fields after adding request
+
       setRequestName("");
       setRequestAmount("");
     }
   };
 
   function downloadRequests() {
-
     // TODO: update this to make call to database instead
 
     // Write log data to a file
     const logData = requestsList
-      .map((request) => `${request.name} - $${request.amount.toFixed(2)}`)
+      .map(
+        (request) => `${request.description} - $${request.amount.toFixed(2)}`
+      )
       .join("\n");
 
     // Create a Blob with the log data
@@ -96,13 +109,11 @@ function Requests() {
     window.URL.revokeObjectURL(url);
   }
 
-  console.log(requestsList);
 
-  // there is a better way to tell using the user id, just did this for now 
-  const yourRequests = requestsList.filter((r)=> r.from.username === "You")
-  const pendingRequests = requestsList.filter((r)=> r.to.username === "You")
+  // there is a better way to tell using the user id, just did this for now
+  const yourRequests = requestsList.filter((r) => r.user === "jrenning");
+  const pendingRequests = requestsList.filter((r) => r.other_user === "jrenning");
 
-  
   return (
     <div>
       <h2>Requests</h2>
@@ -111,7 +122,7 @@ function Requests() {
           <input
             type="text"
             className="input"
-            placeholder="Request Name"
+            placeholder="To"
             value={requestName}
             onChange={handleRequestNameChange}
           />
@@ -123,6 +134,15 @@ function Requests() {
             placeholder="Request Amount"
             value={requestAmount}
             onChange={handleRequestAmountChange}
+          />
+        </div>
+        <div className="request-input">
+          <input
+            type="text"
+            className="input"
+            placeholder="Description"
+            value={requestDescription}
+            onChange={handleRequestDescriptionChange}
           />
         </div>
         <div className="request-button">
