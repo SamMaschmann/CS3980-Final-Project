@@ -4,7 +4,7 @@ import Button from "../../components/Common/Button/Button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // You'll need to install axios: npm install axios
 
-import { signup } from '../../store/authSlice';
+import { signup, signin } from '../../store/authSlice';
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 
 function Login() {
@@ -23,6 +23,7 @@ function Login() {
       console.log(response)
       const token = response.data.access_token; // Assuming your backend returns a token
       localStorage.setItem("token", token); // Store token in local storage
+      dispatch(signin({username, password}))
       navigate("/");
     } catch (error) {
       console.error("Login failed:", error);

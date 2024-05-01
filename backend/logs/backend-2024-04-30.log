@@ -271,3 +271,36 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 19:06:19,733: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
 2024-04-30 19:06:19,733: database.db: INFO - Updating document from mongoDB 6631872c61d6c21f1d654690
 2024-04-30 19:06:19,733: database.db: INFO - Fetching document from mongoDB
+2024-04-30 20:03:46,798: routes.users: INFO - [post /signup] Creating user zxcvb
+2024-04-30 20:03:46,857: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Sam\Documents\Python\PyWeb\CS3980-Final-Project\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 20:03:47,286: database.db: INFO - Saving document to mongoDB
+2024-04-30 20:03:59,549: routes.users: INFO - [post /signup] Creating user q
+2024-04-30 20:04:13,464: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:04:13,922: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:12:41,001: routes.users: INFO - [post /signup] Creating user bvcxz
+2024-04-30 20:12:41,484: database.db: INFO - Saving document to mongoDB
+2024-04-30 20:12:58,385: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:12:58,828: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:13:09,943: routes.users: INFO - [post /signin] Successfully signed in user bvcxz
+2024-04-30 20:13:10,395: routes.users: INFO - [post /signin] Successfully signed in user bvcxz
+2024-04-30 20:19:37,054: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Sam\Documents\Python\PyWeb\CS3980-Final-Project\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 20:19:37,443: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:19:37,888: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:19:42,184: routes.users: INFO - [get /users/friends] Fetching friends of user q
+2024-04-30 20:19:42,199: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:19:42,242: routes.users: INFO - [get /users/friends] Fetching friends of user q
+2024-04-30 20:19:42,596: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:19:59,983: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:20:00,462: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:20:06,958: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:20:07,134: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
