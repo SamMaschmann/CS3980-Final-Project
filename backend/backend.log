@@ -577,3 +577,10 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 20:06:38,998: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
 2024-04-30 20:07:54,517: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
 2024-04-30 20:07:58,224: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:21:01,589: routes.payments: INFO - Payment with id = 6629e92b91b017e5b2c39b8f was deleted
+2024-04-30 20:21:09,905: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:21:10,052: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:21:16,423: routes.payments: INFO - Payment with id = 6629e93c74344d5236de30d1 was deleted
+2024-04-30 20:21:20,252: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:21:20,380: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:23:20,036: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
