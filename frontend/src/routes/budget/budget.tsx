@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import "./budget.css";
+import BudgetPie from '../../components/BudgetPie/BudgetPie';
 
 export type Expense = {
-  id: string;
+  _id: string;
   name: string;
   category: string;
   amount: number;
@@ -12,13 +13,13 @@ export type Expense = {
 function Budget() {
   const [expenses, setExpenses] = useState<Expense[]>([
     {
-      id: "1",
+      _id: "1",
       name: "Bagel",
       category: "Food",
       amount: 5,
     },
     {
-      id: "2",
+      _id: "2",
       name: "Notebook",
       category: "School",
       amount: 10,
@@ -30,11 +31,11 @@ function Budget() {
   };
 
   const deleteExpense = (id: string) => {
-    setExpenses(expenses.filter(expense => expense.id !== id));
+    setExpenses(expenses.filter(expense => expense._id !== id));
   };
 
   const editExpense = (id: string, updatedExpense: Expense) => {
-    setExpenses(expenses.map(expense => expense.id === id ? updatedExpense : expense));
+    setExpenses(expenses.map(expense => expense._id === id ? updatedExpense : expense));
   };
 
   const downloadExpenses = () => {
@@ -59,12 +60,12 @@ function Budget() {
         <h2>Expenses</h2>
         <ul>
           {expenses.map(expense => (
-            <li key={expense.id}>
+            <li key={expense._id}>
               <div>{expense.name}</div>
               <div>{expense.category}</div>
               <div>{expense.amount}</div>
-              <button onClick={() => editExpense(expense.id, { ...expense, amount: expense.amount + 1 })}>Edit</button>
-              <button onClick={() => deleteExpense(expense.id)}>Delete</button>
+              <button onClick={() => editExpense(expense._id, { ...expense, amount: expense.amount + 1 })}>Edit</button>
+              <button onClick={() => deleteExpense(expense._id)}>Delete</button>
             </li>
           ))}
         </ul>
@@ -72,41 +73,41 @@ function Budget() {
     );
   };
 
-  const BudgetPie: React.FC<{ expenses: Expense[] }> = ({ expenses }) => {
-    const data = {
-      labels: expenses.map(expense => expense.name),
-      datasets: [
-        {
-          label: 'Expenses',
-          data: expenses.map(expense => expense.amount),
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    };
+  // const BudgetPie: React.FC<{ expenses: Expense[] }> = ({ expenses }) => {
+  //   const data = {
+  //     labels: expenses.map(expense => expense.name),
+  //     datasets: [
+  //       {
+  //         label: 'Expenses',
+  //         data: expenses.map(expense => expense.amount),
+  //         backgroundColor: [
+  //           'rgba(255, 99, 132, 0.5)',
+  //           'rgba(54, 162, 235, 0.5)',
+  //           'rgba(255, 206, 86, 0.5)',
+  //           'rgba(75, 192, 192, 0.5)',
+  //           'rgba(153, 102, 255, 0.5)',
+  //           'rgba(255, 159, 64, 0.5)',
+  //         ],
+  //         borderColor: [
+  //           'rgba(255, 99, 132, 1)',
+  //           'rgba(54, 162, 235, 1)',
+  //           'rgba(255, 206, 86, 1)',
+  //           'rgba(75, 192, 192, 1)',
+  //           'rgba(153, 102, 255, 1)',
+  //           'rgba(255, 159, 64, 1)',
+  //         ],
+  //         borderWidth: 1,
+  //       },
+  //     ],
+  //   };
 
-    return (
-      <div className="budget-pie-container">
-        <h2>Budget Pie Chart</h2>
-        <Pie data={data} />
-      </div>
-    );
-  };
+  //   return (
+  //     <div className="budget-pie-container">
+  //       <h2>Budget Pie Chart</h2>
+  //       <Pie data={data} />
+  //     </div>
+  //   );
+  // };
 
   const ExpenseForm: React.FC<{ addExpense: (newExpense: Expense) => void; }> = ({ addExpense }) => {
     const [name, setName] = useState("");
@@ -116,7 +117,7 @@ function Budget() {
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       if (!name || !category || amount <= 0) return;
-      addExpense({ id: Math.random().toString(), name, category, amount });
+      addExpense({ _id: Math.random().toString(), name, category, amount });
       setName("");
       setCategory("");
       setAmount(0);
