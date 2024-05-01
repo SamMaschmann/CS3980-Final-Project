@@ -1,6 +1,8 @@
 from beanie import PydanticObjectId
 from fastapi import APIRouter, Depends, HTTPException
 
+from auth.hash import HashPassword
+from auth.jwt import create_access_token, verify_access_token
 from auth.auth import get_user
 from database.db import Database
 from models.dataModels import LoanRequest, LoanUpdate, Loans, Users
@@ -13,8 +15,11 @@ loan_router = APIRouter(tags=["Loans"]) # What does this do? # just adds a secti
 
 loan_database = Database(Loans) 
 
+hash_password = HashPassword()
+
 @loan_router.get("/loans", response_model=list[Loans])
 async def get_all_loans(user: Users = Depends(get_user)) -> list[Loans]:
+    logger.info(user)
     logger.info("[get /loans] Fetching loans for user " + user.username)
     
     loans = await loan_database.get_all(user.username)

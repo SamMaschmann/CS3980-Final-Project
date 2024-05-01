@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoanItem from '../../components/LoanItem/LoanItem';
 import "./loans.css"
 import Button from '../../components/Common/Button/Button';
-import axios from 'axios';
+import axios from "axios";
 
 
 export type LoanType = "OPEN" | "CLOSED"
@@ -33,7 +33,16 @@ function Loans() {
 
   useEffect(()=> {
     async function fetchData() {
+      const token = localStorage.getItem("token");
+      console.log(token)
+      if (!token) {
+        // Handle case where token is missing or invalid
+        console.error("Token is missing or invalid");
+        return;
+      }
+      
       const res = await axios.get(`http://localhost:8000/loans?token=${localStorage.getItem("token")}`)
+      console.log(res)
       const data = await res.data
 
       setLoansList(data)
