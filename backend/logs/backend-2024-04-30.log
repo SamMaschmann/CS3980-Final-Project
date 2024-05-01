@@ -253,3 +253,21 @@ Traceback (most recent call last):
     version = _bcrypt.__about__.__version__
 AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 18:51:03,078: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:55:04,662: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:55:04,726: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 18:55:06,342: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 18:55:06,407: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 19:04:16,151: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 19:04:16,152: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
+2024-04-30 19:04:16,153: database.db: INFO - Saving document to mongoDB
+2024-04-30 19:04:25,836: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 19:04:25,837: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 19:04:25,837: database.db: INFO - Updating document from mongoDB 6631870061d6c21f1d65468b
+2024-04-30 19:04:25,837: database.db: INFO - Fetching document from mongoDB
+2024-04-30 19:05:00,716: database.db: INFO - Fetched 0 documents from mongoDB
+2024-04-30 19:05:00,716: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
+2024-04-30 19:05:00,716: database.db: INFO - Saving document to mongoDB
+2024-04-30 19:06:19,732: database.db: INFO - Fetched 1 documents from mongoDB
+2024-04-30 19:06:19,733: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
+2024-04-30 19:06:19,733: database.db: INFO - Updating document from mongoDB 6631872c61d6c21f1d654690
+2024-04-30 19:06:19,733: database.db: INFO - Fetching document from mongoDB

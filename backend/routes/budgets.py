@@ -28,7 +28,6 @@ async def add_expense(body: Expense, user: Users = Depends(get_user)) -> dict:
     if budgets == []:
         logger.info("[post /budgets] user has no budget, creating one" + user.username)
         budget = Budgets(user_id=user.id, expenses=[body])
-        print(budget)
         await budget_database.save(budget)
     else:
         logger.info("[post /budgets] Adding expense for user " + user.username)

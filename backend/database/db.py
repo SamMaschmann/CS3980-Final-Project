@@ -66,8 +66,9 @@ class Database:
         des_body = json.loads(des_body)
 
         # Avoid updating fields in exclude_fields (id, user_id, etc)
-        for s in exclude_fields:
-            des_body.pop(s, None)
+        if exclude_fields:
+            for s in exclude_fields:
+                des_body.pop(s, None)
 
         doc = await self.get(id)
         if not doc:

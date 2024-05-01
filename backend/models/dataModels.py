@@ -76,7 +76,7 @@ class Payments(Document):
     
 
 class Expense(BaseModel):
-    id: PydanticObjectId
+    id: PydanticObjectId = Field(default_factory=PydanticObjectId)
     name: str
     category: str
     amount: int
