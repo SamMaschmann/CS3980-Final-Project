@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import "./budget.css";
 import BudgetPie from '../../components/BudgetPie/BudgetPie';
+import BudgetItem from '../../components/BudgetItem/BudgetItem';
 
 export type Expense = {
   _id: string;
@@ -60,54 +61,14 @@ function Budget() {
         <h2>Expenses</h2>
         <ul>
           {expenses.map(expense => (
-            <li key={expense._id}>
-              <div>{expense.name}</div>
-              <div>{expense.category}</div>
-              <div>{expense.amount}</div>
-              <button onClick={() => editExpense(expense._id, { ...expense, amount: expense.amount + 1 })}>Edit</button>
-              <button onClick={() => deleteExpense(expense._id)}>Delete</button>
-            </li>
+            <BudgetItem {...expense}/>
           ))}
         </ul>
       </div>
     );
   };
 
-  // const BudgetPie: React.FC<{ expenses: Expense[] }> = ({ expenses }) => {
-  //   const data = {
-  //     labels: expenses.map(expense => expense.name),
-  //     datasets: [
-  //       {
-  //         label: 'Expenses',
-  //         data: expenses.map(expense => expense.amount),
-  //         backgroundColor: [
-  //           'rgba(255, 99, 132, 0.5)',
-  //           'rgba(54, 162, 235, 0.5)',
-  //           'rgba(255, 206, 86, 0.5)',
-  //           'rgba(75, 192, 192, 0.5)',
-  //           'rgba(153, 102, 255, 0.5)',
-  //           'rgba(255, 159, 64, 0.5)',
-  //         ],
-  //         borderColor: [
-  //           'rgba(255, 99, 132, 1)',
-  //           'rgba(54, 162, 235, 1)',
-  //           'rgba(255, 206, 86, 1)',
-  //           'rgba(75, 192, 192, 1)',
-  //           'rgba(153, 102, 255, 1)',
-  //           'rgba(255, 159, 64, 1)',
-  //         ],
-  //         borderWidth: 1,
-  //       },
-  //     ],
-  //   };
 
-  //   return (
-  //     <div className="budget-pie-container">
-  //       <h2>Budget Pie Chart</h2>
-  //       <Pie data={data} />
-  //     </div>
-  //   );
-  // };
 
   const ExpenseForm: React.FC<{ addExpense: (newExpense: Expense) => void; }> = ({ addExpense }) => {
     const [name, setName] = useState("");
@@ -124,21 +85,42 @@ function Budget() {
     };
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='expense-form'>
         <h2>Add Expense</h2>
-        <div>
+        <div className="expense-form-pair">
           <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <div className="expense-form-input">
+            <input
+              className="input"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
         </div>
-        <div>
+        <div className="expense-form-pair">
           <label>Category:</label>
-          <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
+          <div className='expense-form-input'>
+            <input
+              type="text"
+              className="input"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+          </div>
         </div>
-        <div>
+        <div className="expense-form-pair">
           <label>Amount:</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(parseFloat(e.target.value))} />
+          <div className='expense-form-input'>
+            <input
+              type="number"
+              className="input"
+              value={amount}
+              onChange={(e) => setAmount(parseFloat(e.target.value))}
+            />
+          </div>
         </div>
-        <button type="submit">Add Expense</button>
+        <button type="submit" className='form-button'>Add Expense</button>
       </form>
     );
   };
@@ -147,15 +129,20 @@ function Budget() {
     <div className="budget-container">
       <h1>Budget Management</h1>
       <div className="budget-content">
-        
-        <BudgetExpenses expenses={expenses} deleteExpense={deleteExpense} editExpense={editExpense}/>
-        <ExpenseForm addExpense={addExpense} />
-        <BudgetPie expenses={expenses}/>
-        <button className="download-text" onClick={downloadExpenses}>
-          Download Expenses
-        </button>
+        <div className="expense-list">
+          <ExpenseForm addExpense={addExpense} />
+          <button className="download-text" onClick={downloadExpenses}>
+            Download Expenses
+          </button>
+          <BudgetExpenses
+            expenses={expenses}
+            deleteExpense={deleteExpense}
+            editExpense={editExpense}
+          />
+        </div>
+
+        <BudgetPie expenses={expenses} />
       </div>
-      
     </div>
   );
 }
