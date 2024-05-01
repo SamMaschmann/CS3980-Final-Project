@@ -3,11 +3,14 @@ import Button from "../../components/Common/Button/Button";
 import "./friends.css";
 import FriendItem, { Friend } from "../../components/FriendItem/FriendItem";
 import axios from "axios";
+import { useAppSelector } from "../../store/hooks";
 
 function Friends() {
   const [friends, setFriends] = useState<string[]>([]);
 
   const [user, setUsers] = useState<string[]>([]);
+
+  const stateUser = useAppSelector((state) => state.auth.user)
 
   useEffect(() => {
     async function fetchData() {
@@ -34,6 +37,7 @@ function Friends() {
   const [newFriendName, setNewFriendName] = useState<string>("");
 
   const handleAddFriend = async () => {
+    alert(stateUser)
     if (newFriendName.trim() !== "") {
       // send request to backend
       await axios.post(

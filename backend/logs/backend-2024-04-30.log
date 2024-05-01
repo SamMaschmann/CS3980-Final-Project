@@ -271,54 +271,38 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 19:06:19,733: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
 2024-04-30 19:06:19,733: database.db: INFO - Updating document from mongoDB 6631872c61d6c21f1d654690
 2024-04-30 19:06:19,733: database.db: INFO - Fetching document from mongoDB
-2024-04-30 19:53:56,203: __main__: INFO - Starting backend
-2024-04-30 19:54:02,933: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+2024-04-30 20:03:46,798: routes.users: INFO - [post /signup] Creating user zxcvb
+2024-04-30 20:03:46,857: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
 Traceback (most recent call last):
-  File "/Users/ilyat/Desktop/CS3980-Final-Project/venv/lib/python3.10/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+  File "C:\Users\Sam\Documents\Python\PyWeb\CS3980-Final-Project\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
     version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
 AttributeError: module 'bcrypt' has no attribute '__about__'
-2024-04-30 19:54:03,233: routes.users: INFO - [post /signin] Successfully signed in user UNIT_TEST_USER_DONT_TOUCH
-2024-04-30 19:54:53,462: database.db: INFO - Fetched 0 documents from mongoDB
-2024-04-30 19:54:53,462: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
-2024-04-30 19:54:53,462: database.db: INFO - Saving document to mongoDB
-2024-04-30 19:55:00,718: database.db: INFO - Fetched 1 documents from mongoDB
-2024-04-30 19:55:00,718: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
-2024-04-30 19:55:00,718: database.db: INFO - Updating document from mongoDB 663192ddb57c535045a81b56
-2024-04-30 19:55:00,718: database.db: INFO - Fetching document from mongoDB
-2024-04-30 19:55:09,120: __main__: INFO - Starting backend
-2024-04-30 19:55:19,088: database.db: INFO - Fetched 1 documents from mongoDB
-2024-04-30 19:55:19,088: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
-2024-04-30 19:55:19,088: database.db: INFO - Updating document from mongoDB 663192ddb57c535045a81b56
-2024-04-30 19:55:19,089: database.db: INFO - Fetching document from mongoDB
-2024-04-30 19:58:00,841: routes.budgets: INFO - [get /bugets] Fetching budget (expenses) for user UNIT_TEST_USER_DONT_TOUCH
-2024-04-30 19:58:00,910: database.db: INFO - Fetched 1 documents from mongoDB
-2024-04-30 20:06:24,560: __main__: INFO - Starting backend
-2024-04-30 20:14:12,590: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:17:39,148: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:18:04,810: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:19:26,355: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:20:51,303: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:21:11,635: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:21:32,093: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:21:49,605: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:22:17,732: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:22:17,794: database.db: INFO - Updating document from mongoDB 663192ddb57c535045a81b56
-2024-04-30 20:22:17,795: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:22:55,330: database.db: INFO - Fetched 0 documents from mongoDB
-2024-04-30 20:22:55,330: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
-2024-04-30 20:22:55,330: database.db: INFO - Saving document to mongoDB
-2024-04-30 20:23:28,278: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:23:28,341: database.db: INFO - Updating document from mongoDB 6631996f4d33b2dd245714c5
-2024-04-30 20:23:28,342: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:24:53,461: database.db: INFO - Fetched 0 documents from mongoDB
-2024-04-30 20:24:53,462: routes.budgets: INFO - [post /budgets] user has no budget, creating oneUNIT_TEST_USER_DONT_TOUCH
-2024-04-30 20:24:53,462: database.db: INFO - Saving document to mongoDB
-2024-04-30 20:24:54,825: database.db: INFO - Fetched 1 documents from mongoDB
-2024-04-30 20:24:54,825: routes.budgets: INFO - [post /budgets] Adding expense for user UNIT_TEST_USER_DONT_TOUCH
-2024-04-30 20:24:54,825: database.db: INFO - Updating document from mongoDB 663199e5fab89955ecbecfd7
-2024-04-30 20:24:54,826: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:25:05,594: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:26:02,596: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:26:18,830: database.db: INFO - Fetching document from mongoDB
-2024-04-30 20:26:18,890: database.db: INFO - Updating document from mongoDB 663199e5fab89955ecbecfd7
-2024-04-30 20:26:18,890: database.db: INFO - Fetching document from mongoDB
+2024-04-30 20:03:47,286: database.db: INFO - Saving document to mongoDB
+2024-04-30 20:03:59,549: routes.users: INFO - [post /signup] Creating user q
+2024-04-30 20:04:13,464: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:04:13,922: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:12:41,001: routes.users: INFO - [post /signup] Creating user bvcxz
+2024-04-30 20:12:41,484: database.db: INFO - Saving document to mongoDB
+2024-04-30 20:12:58,385: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:12:58,828: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:13:09,943: routes.users: INFO - [post /signin] Successfully signed in user bvcxz
+2024-04-30 20:13:10,395: routes.users: INFO - [post /signin] Successfully signed in user bvcxz
+2024-04-30 20:19:37,054: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Sam\Documents\Python\PyWeb\CS3980-Final-Project\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 20:19:37,443: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:19:37,888: routes.users: INFO - [post /signin] Successfully signed in user q
+2024-04-30 20:19:42,184: routes.users: INFO - [get /users/friends] Fetching friends of user q
+2024-04-30 20:19:42,199: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:19:42,242: routes.users: INFO - [get /users/friends] Fetching friends of user q
+2024-04-30 20:19:42,596: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:19:59,983: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:20:00,462: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:20:06,958: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:20:07,134: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:24:55,947: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:24:56,054: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
