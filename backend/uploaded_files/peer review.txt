@@ -1,0 +1,3 @@
+Sam: 5; Very good, helped out when technical problems arose
+Jack: 5; Did maybe more work than the proposal called for, possibly the most in the group
+Ilya: 4; Not as much work on the backend done, as far as I'm aware

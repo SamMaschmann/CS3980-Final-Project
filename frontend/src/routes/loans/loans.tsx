@@ -17,7 +17,7 @@ export type Loan = {
     status: LoanType
     accepted: boolean
     // not sure how documents are stored in mongo so just used strings for now
-    documents?: string[]
+    file?: string[]
 }
 
 export type LoanRequest = {
@@ -29,6 +29,7 @@ export type LoanRequest = {
 function Loans() {
   const [loanName, setLoanName] = useState('');
   const [loanAmount, setLoanAmount] = useState<string>("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null); // New state for selected file
   const [loansList, setLoansList] = useState<Loan[]>([]);
 
   useEffect(()=> {
@@ -60,24 +61,33 @@ function Loans() {
     setLoanAmount(event.target.value);
   };
 
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedFile(event.target.files[0]);
+    }
+  };
+
   const handleAddLoan = async () => {
-    if (loanName.trim() !== '' && loanAmount.trim() !== '') {
-      const newLoan = {
-        description: loanName,
-        amount: parseFloat(loanAmount),
-        // TODO: change this
-        other_user: "test_user",
-        user: ""
-      };
+    if (loanName.trim() !== '' && loanAmount.trim() !== '' && selectedFile) {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
 
-      await axios.post(`http://localhost:8000/loans?token=${localStorage.getItem("token")}`, newLoan)
+      // Add other loan data to formData
+      formData.append('description', loanName);
+      formData.append('amount', loanAmount);
+      formData.append('other_user', 'test_user');
+      formData.append('user', '');
 
+      await axios.post(`http://localhost:8000/loans/upload?token=${localStorage.getItem("token")}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
 
-      
-      // setLoansList([...loansList, newLoan]);
-      // Clear input fields after adding loan
+      // Clear input fields and selected file after adding loan
       setLoanName('');
       setLoanAmount('');
+      setSelectedFile(null);
     }
   };
 
@@ -127,6 +137,13 @@ function Loans() {
             placeholder="Loan Amount"
             value={loanAmount}
             onChange={handleLoanAmountChange}
+          />
+        </div>
+        <div className="loan-input"> {/* New file input */}
+          <input
+            type="file"
+            className="input"
+            onChange={handleFileSelect}
           />
         </div>
         <div className='loan-form-button'>
