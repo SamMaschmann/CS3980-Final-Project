@@ -52,7 +52,6 @@ function Loans() {
 
       setLoansList(data)
 
-      console.log(data)
     }
     fetchData()
   }, [])

@@ -1,8 +1,9 @@
+import base64
 from typing import Any
 from beanie import PydanticObjectId
 from bson import BSON
 from fastapi import APIRouter, Depends, HTTPException, File, UploadFile, Query
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 from auth.hash import HashPassword
 from auth.jwt import create_access_token, verify_access_token
@@ -37,9 +38,11 @@ async def get_all_loans(user: Users = Depends(get_user)) -> list[Loans]:
 @loan_router.get("/loans/{id}/files")
 async def fetch_loan_file(id: PydanticObjectId, user: Users = Depends(get_user)):
     loan = await Loans.find_one(Loans.id == id)
-    
-    # send document 
-    return JSONResponse(loan.loan_document, media_type="multipart/form-data")
+    # fetch documen
+    if loan.loan_document:
+        file_path = os.path.join(UPLOAD_DIR, loan.loan_document)
+        
+        return FileResponse(file_path, filename=loan.loan_document)
 
 @loan_router.post("/loans")
 async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loans:
@@ -63,7 +66,7 @@ async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loa
 @loan_router.post("/loans/{id}/upload")
 async def upload_loan_document(
     id: PydanticObjectId,
-    file: Any = File(...),
+    file: UploadFile = File(...),
     user: Users = Depends(get_user)
 ):
     # Handle file upload
@@ -74,8 +77,7 @@ async def upload_loan_document(
     
     # upload to mongo using id 
     loan = await Loans.find_one(Loans.id == id)
-    document = BSON(file.file)
-    loan.loan_document = document
+    loan.loan_document = file.filename
     
     await loan.save()
     

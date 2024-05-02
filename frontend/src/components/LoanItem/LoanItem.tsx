@@ -1,22 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Loan } from '../../routes/loans/loans'
 import "./LoanItem.css"
 import axios from 'axios'
 
 function LoanItem({other_user, _id, current_amount, description, loan_document}: Loan) {
-
+const [fileData, setFileData] = useState<File>()
   // get document data 
   useEffect(()=> {
-    console.log("data")
     async function fetchData() {
-      const res = await axios.get(`"http://localhost:8000/loans/${_id}/files?token=${localStorage.getItem("token")}`)
+      const res = await axios.get(`http://localhost:8000/loans/${_id}/files?token=${localStorage.getItem("token")}`)
 
-      const data = await res.data
+      const data: File = await res.data
 
       console.log(data)
+
+      setFileData(data)
+      console.log(fileData)
+
     }
 
     fetchData()
+
+    
   }, [])
 
   return (
@@ -27,7 +32,7 @@ function LoanItem({other_user, _id, current_amount, description, loan_document}:
       </div>
 
       <div className="loan-description">{description}</div>
-      <div className="loan-file">{loan_document?.name}</div>
+      <div className="loan-file">{fileData?.name}</div>
     </div>
   );
 }
