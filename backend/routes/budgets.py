@@ -1,5 +1,5 @@
 from beanie import PydanticObjectId
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 
 from auth.auth import get_user
 from database.db import Database
@@ -49,3 +49,18 @@ async def add_expense(body: Expense, user: Users = Depends(get_user)) -> dict:
 	
     return {"result": "success"}
 	
+@budget_router.put("/budgets/expenses/{id}")
+async def edit_expense(id: PydanticObjectId, updated_expense: Expense, user: Users = Depends(get_user)):
+    # Get the budget for the user
+    budget = await Budgets.find_one(Budgets.user == user.username)
+    
+    # Find the expense to update
+    for i, expense in enumerate(budget.expenses):
+        if expense.id == id:
+            # Update the expense
+            budget.expenses[i] = updated_expense
+            await budget.save()
+            return {"result": "success"}
+    
+    # If the expense with the given id is not found, raise HTTPException with status code 404
+    raise HTTPException(status_code=404, detail="Expense not found")
