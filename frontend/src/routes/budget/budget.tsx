@@ -64,7 +64,7 @@ function Budget() {
   }> = ({ expenses, deleteExpense, editExpense }) => {
     return (
       <div className="budget-expenses-container">
-        <h2>Expenses</h2>
+        <h2 className="expenses-title">Expenses</h2>
         <ul>
           {expenses.map((expense) => (
             <BudgetItem {...expense} key={expense.id}/>
