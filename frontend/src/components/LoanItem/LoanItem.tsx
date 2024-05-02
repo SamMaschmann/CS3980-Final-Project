@@ -25,7 +25,12 @@ const [fileData, setFileData] = useState<string>()
 
   async function deleteFile() {
     console.log("hello")
-    await axios.delete(`http:localhost:8000/loans/${_id}/files?token=${localStorage.getItem("token")}`)
+    await axios.delete(`http://localhost:8000/loans/${_id}/files?token=${localStorage.getItem("token")}`)
+    window.location.reload()
+  }
+
+  async function deleteLoan() {
+    await axios.delete(`http://localhost:8000/loans/${_id}?token=${localStorage.getItem("token")}`)
     window.location.reload()
   }
 
@@ -45,6 +50,9 @@ const [fileData, setFileData] = useState<string>()
           <button className='remove-file-button' onClick={deleteFile}>Remove File</button>
         </div>
       )}
+      <div className='delete-button-container'>
+        <button className='delete-button' onClick={()=> deleteLoan()}>Delete</button>
+      </div>
     </div>
   );
 }

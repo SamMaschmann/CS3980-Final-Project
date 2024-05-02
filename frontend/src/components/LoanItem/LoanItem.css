@@ -19,6 +19,11 @@
     justify-content: space-between;
 }
 
+.delete-button-container {
+    display: flex;
+    justify-content: end;
+}
+
 .remove-file-button {
     background-color: var(--color-danger);
     color: white;

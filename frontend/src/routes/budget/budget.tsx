@@ -5,7 +5,7 @@ import BudgetPie from '../../components/BudgetPie/BudgetPie';
 import BudgetItem from '../../components/BudgetItem/BudgetItem';
 
 export type Expense = {
-  _id: string;
+  id: string;
   name: string;
   category: string;
   amount: number;
@@ -14,13 +14,13 @@ export type Expense = {
 function Budget() {
   const [expenses, setExpenses] = useState<Expense[]>([
     {
-      _id: "1",
+      id: "1",
       name: "Bagel",
       category: "Food",
       amount: 5,
     },
     {
-      _id: "2",
+      id: "2",
       name: "Notebook",
       category: "School",
       amount: 10,
@@ -32,11 +32,11 @@ function Budget() {
   };
 
   const deleteExpense = (id: string) => {
-    setExpenses(expenses.filter(expense => expense._id !== id));
+    setExpenses(expenses.filter(expense => expense.id !== id));
   };
 
   const editExpense = (id: string, updatedExpense: Expense) => {
-    setExpenses(expenses.map(expense => expense._id === id ? updatedExpense : expense));
+    setExpenses(expenses.map(expense => expense.id === id ? updatedExpense : expense));
   };
 
   const downloadExpenses = () => {
@@ -78,7 +78,7 @@ function Budget() {
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       if (!name || !category || amount <= 0) return;
-      addExpense({ _id: Math.random().toString(), name, category, amount });
+      addExpense({ id: Math.random().toString(), name, category, amount });
       setName("");
       setCategory("");
       setAmount(0);

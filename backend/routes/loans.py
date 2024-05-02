@@ -57,6 +57,16 @@ async def delete_file(id: PydanticObjectId, user: Users = Depends(get_user)):
     
     return {"message": "Loan document successfully deleted"}
     
+    
+@loan_router.delete("/loans/{id}")
+async def delete_loan(id: PydanticObjectId, user: Users = Depends(get_user)):
+    loan = await Loans.find_one(Loans.id == id).delete()
+    # TODO check user auth and file exists
+    
+    logger.info("Loan deleted successfully")
+    
+    return {"message": "Loan successfully deleted"}
+    
 
 @loan_router.post("/loans")
 async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loans:
