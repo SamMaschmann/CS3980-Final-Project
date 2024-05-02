@@ -104,7 +104,7 @@ class Expense(BaseModel):
  
 
 class Budgets(Document):
-    user_id:  PydanticObjectId
+    user:  str
     expenses: list[Expense] 
 
 ### END OF DATABASE MODELS

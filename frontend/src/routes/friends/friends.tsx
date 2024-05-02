@@ -71,19 +71,19 @@ function Friends() {
     );
   };
 
-  const downloadFriends = () => {
-    const logData = friends.map((friend) => friend).join("\n");
+  // const downloadFriends = () => {
+  //   const logData = friends.map((friend) => friend).join("\n");
 
-    const blob = new Blob([logData], { type: "text/plain" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "friends.log";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-  };
+  //   const blob = new Blob([logData], { type: "text/plain" });
+  //   const url = window.URL.createObjectURL(blob);
+  //   const a = document.createElement("a");
+  //   a.href = url;
+  //   a.download = "friends.log";
+  //   document.body.appendChild(a);
+  //   a.click();
+  //   document.body.removeChild(a);
+  //   window.URL.revokeObjectURL(url);
+  // };
 
   return (
     <div>
@@ -105,10 +105,6 @@ function Friends() {
             />
           </div>
         </div>
-
-        <button className="download-text" onClick={downloadFriends}>
-          Download Friends
-        </button>
       </header>
       <div>
         {friends.map((friend) => (

@@ -4,8 +4,11 @@ import "./BudgetItem.css"
 import axios from 'axios';
 
 function BudgetItem({name, category, amount, id}: Expense) {
+
+  console.log(id)
   async function handleDelete() {
-    await axios.delete(`http://localhost:8000/budgets/expenses/${id}`)
+    await axios.delete(`http://localhost:8000/budgets/expenses/${id}?token=${localStorage.getItem("token")}`)
+    window.location.reload()
   }
   
   return (
