@@ -14,7 +14,7 @@ const [fileData, setFileData] = useState<string>()
 
 
 
-      setFileData(res.headers["content-disposition"])
+      setFileData(res.headers["content-disposition"].slice(22, -1))
 
     }
 
@@ -23,15 +23,28 @@ const [fileData, setFileData] = useState<string>()
     
   }, [])
 
+  async function deleteFile() {
+    console.log("hello")
+    await axios.delete(`http:localhost:8000/loans/${_id}/files?token=${localStorage.getItem("token")}`)
+    window.location.reload()
+  }
+
   return (
     <div className="loan-container">
       <div className="loan-top">
         <div className="loan-name">{other_user}</div>
-        <div className="loan-amount">${current_amount.toLocaleString("en", {useGrouping: true})}.00</div>
+        <div className="loan-amount">
+          ${current_amount.toLocaleString("en", { useGrouping: true })}.00
+        </div>
       </div>
 
       <div className="loan-description">{description}</div>
-      <div className="loan-file">{fileData}</div>
+      {fileData && (
+        <div>
+          <div className="loan-file">{fileData}</div>
+          <button className='remove-file-button' onClick={deleteFile}>Remove File</button>
+        </div>
+      )}
     </div>
   );
 }
