@@ -1,8 +1,10 @@
 
 from datetime import datetime
 from enum import Enum
-from typing import Optional
+from typing import Any, Optional
 from beanie import Document, PydanticObjectId
+from bson import BSON
+from fastapi import File, UploadFile
 from pydantic import BaseModel, Field
 
 
@@ -54,6 +56,7 @@ class Loans(Document):
     description: str
     accepted: bool
     status: LoanType = LoanType.OPEN
+    loan_document: Optional[Any] = File(...)
     
 class PaymentPlan(BaseModel):
     start_date: datetime

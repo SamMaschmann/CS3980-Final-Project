@@ -17,25 +17,29 @@ export type Loan = {
     status: LoanType
     accepted: boolean
     // not sure how documents are stored in mongo so just used strings for now
-    file?: string[]
+    loan_document?: File
+    _id: string
 }
 
 export type LoanRequest = {
   description: string
   amount: number
   other_user: string
+  file_data: File
 }
 
 function Loans() {
+  // other user's name
   const [loanName, setLoanName] = useState('');
   const [loanAmount, setLoanAmount] = useState<string>("");
+  // description of loan (this is here to match the backend please don't delete)
+  const [loanDescription, setLoanDescription] = useState("")
   const [selectedFile, setSelectedFile] = useState<File | null>(null); // New state for selected file
   const [loansList, setLoansList] = useState<Loan[]>([]);
 
   useEffect(()=> {
     async function fetchData() {
       const token = localStorage.getItem("token");
-      console.log(token)
       if (!token) {
         // Handle case where token is missing or invalid
         console.error("Token is missing or invalid");
@@ -47,6 +51,8 @@ function Loans() {
       const data = await res.data
 
       setLoansList(data)
+
+      console.log(data)
     }
     fetchData()
   }, [])
@@ -61,6 +67,12 @@ function Loans() {
     setLoanAmount(event.target.value);
   };
 
+    const handleLoanDescriptionChange = (
+      event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+      setLoanDescription(event.target.value);
+    };
+
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
       setSelectedFile(event.target.files[0]);
@@ -69,16 +81,28 @@ function Loans() {
 
   const handleAddLoan = async () => {
     if (loanName.trim() !== '' && loanAmount.trim() !== '' && selectedFile) {
-      const formData = new FormData();
-      formData.append('file', selectedFile);
+      const formDataFile = new FormData();
+      formDataFile.append('file', selectedFile);
 
-      // Add other loan data to formData
-      formData.append('description', loanName);
-      formData.append('amount', loanAmount);
-      formData.append('other_user', 'test_user');
-      formData.append('user', '');
 
-      await axios.post(`http://localhost:8000/loans/upload?token=${localStorage.getItem("token")}`, formData, {
+      let formData = {
+        description: loanDescription,
+        other_user: loanName,
+        user: "",
+        amount: loanAmount
+      }
+      // create loan without document
+      const res = await axios.post(
+        `http://localhost:8000/loans?token=${localStorage.getItem(
+          "token"
+        )}`,
+        formData
+      );
+
+      const data = await res.data
+
+      // use returned id to attach the document to the right loan
+      await axios.post(`http://localhost:8000/loans/${data._id}/upload?token=${localStorage.getItem("token")}`, formDataFile, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -87,6 +111,7 @@ function Loans() {
       // Clear input fields and selected file after adding loan
       setLoanName('');
       setLoanAmount('');
+      setLoanDescription("")
       setSelectedFile(null);
     }
   };
@@ -125,7 +150,7 @@ function Loans() {
           <input
             type="text"
             className="input"
-            placeholder="Loan Name"
+            placeholder="Loaner"
             value={loanName}
             onChange={handleLoanNameChange}
           />
@@ -139,20 +164,29 @@ function Loans() {
             onChange={handleLoanAmountChange}
           />
         </div>
-        <div className="loan-input"> {/* New file input */}
+        <div className="loan-input">
           <input
-            type="file"
             className="input"
-            onChange={handleFileSelect}
+            type="text"
+            placeholder="Loan Description"
+            value={loanDescription}
+            onChange={handleLoanDescriptionChange}
           />
         </div>
-        <div className='loan-form-button'>
+        <div className="loan-input">
+          {" "}
+          {/* New file input */}
+          <input type="file" className="input" onChange={handleFileSelect} />
+        </div>
+        <div className="loan-form-button">
           <Button action={handleAddLoan} bg_color="green" text="Add Loan" />
         </div>
       </div>
       <div>
         <h3>Existing Loans:</h3>
-        <button className='download-text' onClick={downloadLogs}>Download Data</button>
+        <button className="download-text" onClick={downloadLogs}>
+          Download Data
+        </button>
         <div className="loan-list">
           {loansList.map((loan, index) => (
             <LoanItem {...loan} key={index} />

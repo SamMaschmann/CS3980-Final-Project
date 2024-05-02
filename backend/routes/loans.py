@@ -1,5 +1,8 @@
+from typing import Any
 from beanie import PydanticObjectId
+from bson import BSON
 from fastapi import APIRouter, Depends, HTTPException, File, UploadFile, Query
+from fastapi.responses import JSONResponse
 
 from auth.hash import HashPassword
 from auth.jwt import create_access_token, verify_access_token
@@ -31,6 +34,13 @@ async def get_all_loans(user: Users = Depends(get_user)) -> list[Loans]:
     
     return loans
 
+@loan_router.get("/loans/{id}/files")
+async def fetch_loan_file(id: PydanticObjectId, user: Users = Depends(get_user)):
+    loan = await Loans.find_one(Loans.id == id)
+    
+    # send document 
+    return JSONResponse(loan.loan_document, media_type="multipart/form-data")
+
 @loan_router.post("/loans")
 async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loans:
     logger.info("[post /loans] Adding loan for user " + user.username)
@@ -43,16 +53,17 @@ async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loa
         original_amount=body.amount,
         accepted=False,
         description=body.description,
-        file=body.file  # Assuming `file` is a field in LoanRequest
+        loan_document=None
     )
     id = await loan_database.save(new_loan)
     
+    
     return new_loan
 
-@loan_router.post("/loans/upload")
+@loan_router.post("/loans/{id}/upload")
 async def upload_loan_document(
-    file: UploadFile = File(...),
-    token: str = Query(..., alias="token"),
+    id: PydanticObjectId,
+    file: Any = File(...),
     user: Users = Depends(get_user)
 ):
     # Handle file upload
@@ -61,8 +72,13 @@ async def upload_loan_document(
         f.write(await file.read())
     
     
-    # Handle other logic related to the uploaded file and user authentication
-    # ...
+    # upload to mongo using id 
+    loan = await Loans.find_one(Loans.id == id)
+    document = BSON(file.file)
+    loan.loan_document = document
+    
+    await loan.save()
+    
 
     return {"message": "File uploaded successfully"}
 
