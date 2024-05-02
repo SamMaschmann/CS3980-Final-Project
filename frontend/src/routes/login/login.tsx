@@ -13,7 +13,7 @@ function Login() {
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
 
-  const user = useAppSelector((state) => state.auth.user)
+
   const error = useAppSelector((state) => state.auth.error)
   const dispatch = useAppDispatch();
 

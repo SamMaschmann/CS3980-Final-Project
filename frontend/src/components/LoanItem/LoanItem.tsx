@@ -2,7 +2,7 @@ import React from 'react'
 import { Loan } from '../../routes/loans/loans'
 import "./LoanItem.css"
 
-function LoanItem({other_user, current_amount, description}: Loan) {
+function LoanItem({other_user, current_amount, description, file}: Loan) {
   return (
     <div className="loan-container">
       <div className="loan-top">
@@ -11,6 +11,7 @@ function LoanItem({other_user, current_amount, description}: Loan) {
       </div>
 
       <div className="loan-description">{description}</div>
+      <div className="loan-file">{file}</div>
     </div>
   );
 }

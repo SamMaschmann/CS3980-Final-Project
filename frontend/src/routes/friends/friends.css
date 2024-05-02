@@ -8,3 +8,13 @@
     font-size: 20pt;
     font-weight: 500;
 }
+
+.friend-form {
+    display: flex;
+}
+
+.friend-form-button {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+}

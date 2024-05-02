@@ -306,3 +306,151 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 20:20:07,134: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
 2024-04-30 20:24:55,947: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
 2024-04-30 20:24:56,054: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:27:59,624: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:27:59,743: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:28:11,495: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:28:11,756: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:28:51,177: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:28:51,344: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:30:34,669: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:30:34,686: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:30:34,709: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:30:34,731: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:31:44,092: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:31:44,103: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:31:45,858: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:31:45,871: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:32:13,498: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:32:13,532: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:32:24,989: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:32:25,003: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:01,708: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:01,730: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:13,361: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:13,372: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:19,211: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:19,238: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:26,091: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:26,165: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:29,747: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:29,762: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:35:37,016: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:35:37,026: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:36:02,151: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:36:02,182: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:36:30,440: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:36:30,455: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:36:36,840: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:36:36,857: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:36:47,343: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:36:47,353: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:47:58,128: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:47:58,152: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:49:44,094: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:49:44,202: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:49:48,212: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-04-30 20:49:49,402: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 20:49:50,479: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-04-30 20:50:02,430: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:02,522: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:04,334: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:50:04,348: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:50:04,369: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:50:04,392: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:50:06,125: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:06,231: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:09,189: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:09,294: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:10,155: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 20:50:10,281: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 20:50:12,231: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:50:12,253: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:50:12,277: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:50:12,309: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:50:14,344: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:50:14,445: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:53:49,051: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:53:53,828: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 20:56:15,842: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:15,852: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:15,875: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:15,895: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:19,545: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:19,558: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:19,584: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:19,597: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:50,458: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:50,483: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:50,506: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:50,527: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:54,785: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:54,814: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:56:54,839: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:56:54,878: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:57:55,398: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 20:58:14,666: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:58:14,720: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:58:20,199: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:58:20,225: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:58:20,245: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:58:20,285: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:58:56,264: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:58:56,435: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 20:58:56,455: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 20:58:56,519: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:09:21,703: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:09:21,717: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:09:21,766: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:09:21,791: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:18:02,524: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:18:03,098: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:18:05,534: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:18:05,648: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:30:51,998: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:30:52,016: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:30:52,039: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:30:52,059: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:31:34,180: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 21:33:44,737: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:33:44,854: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:36:52,458: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:36:52,470: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:36:52,497: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:36:52,507: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:37:03,091: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 21:37:16,190: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 21:37:20,176: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:38:35,388: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 21:38:51,915: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:38:51,925: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:38:51,948: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:38:52,137: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:47:28,360: routes.users: INFO - [post /users/friends] Successfully added friend for jrenning
+2024-04-30 21:47:31,786: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:47:31,795: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:47:31,820: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:47:32,049: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:48:20,694: routes.users: INFO - [delete /users/friends] Successfully removed friend for jrenning
+2024-04-30 21:48:22,929: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:48:22,937: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:48:22,966: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:48:22,974: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:49:15,527: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:49:15,581: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:49:17,544: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 21:49:17,643: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 21:49:33,056: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 21:49:33,157: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 21:49:39,581: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:49:39,592: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:49:39,618: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-04-30 21:49:39,624: routes.users: INFO - [get /users] Fetching all users
+2024-04-30 21:49:42,862: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:49:42,903: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-04-30 21:49:45,209: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-04-30 21:49:45,300: routes.payments: INFO - [get /payments] Fetching payments for user jrenning

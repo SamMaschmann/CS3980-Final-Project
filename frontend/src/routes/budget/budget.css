@@ -2,6 +2,38 @@
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to prevent overflow */
   }
+
+  .expense-form-pair {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
+  .expense-form-input {
+    width: 12rem;
+    margin: auto;
+    height: 4rem;
+  }
+
+
+  .form-button {
+    background-color: rgb(171, 171, 232);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    color: white;
+    width: 8rem;
+    margin: auto;
+  }
+
+  .form-button:hover {
+    opacity: 0.7;
+  }
+  .expense-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
   
   .budget-pie-container,
   .budget-expenses-container {
