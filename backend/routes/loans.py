@@ -41,8 +41,8 @@ async def fetch_loan_file(id: PydanticObjectId, user: Users = Depends(get_user))
     # fetch documen
     if loan.loan_document:
         file_path = os.path.join(UPLOAD_DIR, loan.loan_document)
-        
-        return FileResponse(file_path, filename=loan.loan_document)
+        headers = {"Access-Control-Expose-Headers": "*"}
+        return FileResponse(file_path, filename=loan.loan_document, headers=headers)
 
 @loan_router.post("/loans")
 async def create_loan(body: LoanRequest, user: Users = Depends(get_user)) -> Loans:

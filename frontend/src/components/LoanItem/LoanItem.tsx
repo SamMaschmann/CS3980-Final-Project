@@ -4,7 +4,7 @@ import "./LoanItem.css"
 import axios from 'axios'
 
 function LoanItem({other_user, _id, current_amount, description, loan_document}: Loan) {
-const [fileData, setFileData] = useState<File>()
+const [fileData, setFileData] = useState<string>()
   // get document data 
   useEffect(()=> {
     async function fetchData() {
@@ -12,10 +12,9 @@ const [fileData, setFileData] = useState<File>()
 
       const data: File = await res.data
 
-      console.log(data)
 
-      setFileData(data)
-      console.log(fileData)
+
+      setFileData(res.headers["content-disposition"])
 
     }
 
@@ -32,7 +31,7 @@ const [fileData, setFileData] = useState<File>()
       </div>
 
       <div className="loan-description">{description}</div>
-      <div className="loan-file">{fileData?.name}</div>
+      <div className="loan-file">{fileData}</div>
     </div>
   );
 }
