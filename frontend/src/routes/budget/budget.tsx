@@ -15,29 +15,13 @@ export type Expense = {
 function Budget() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
-  const addExpense = (newExpense: Expense) => {
-    setExpenses([...expenses, newExpense]);
-  };
-
-  const deleteExpense = (id: string) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
-  };
-
-  const editExpense = (id: string, updatedExpense: Expense) => {
-    setExpenses(
-      expenses.map((expense) => (expense.id === id ? updatedExpense : expense))
-    );
+  const fetchData = async () => {
+    const res = await axios.get(`http://localhost:8000/budgets?token=${localStorage.getItem("token")}`);
+    const data = await res.data;
+    setExpenses(data);
   };
 
   useEffect(() => {
-    async function fetchData() {
-      const res = await axios.get(`http://localhost:8000/budgets?token=${localStorage.getItem("token")}`);
-      const data = await res.data;
-      setExpenses(data);
-
-      console.log(expenses)
-    }
-
     fetchData();
   }, []);
 
@@ -57,89 +41,19 @@ function Budget() {
     window.URL.revokeObjectURL(url);
   };
 
-  const BudgetExpenses: React.FC<{
-    expenses: Expense[];
-    deleteExpense: (id: string) => void;
-    editExpense: (id: string, updatedExpense: Expense) => void;
-  }> = ({ expenses, deleteExpense, editExpense }) => {
-    return (
-      <div className="budget-expenses-container">
-        <h2 className="expenses-title">Expenses</h2>
-        <ul>
-          {expenses.map((expense) => (
-            <BudgetItem {...expense} key={expense.id}/>
-          ))}
-        </ul>
-      </div>
-    );
+  const deleteExpense = async (id: string) => {
+    await axios.delete(`http://localhost:8000/budgets/expenses/${id}?token=${localStorage.getItem("token")}`);
+    fetchData();
   };
 
-  const ExpenseForm: React.FC<{
-    addExpense: (newExpense: Expense) => void;
-  }> = ({ addExpense }) => {
-    const [name, setName] = useState("");
-    const [category, setCategory] = useState("");
-    const [amount, setAmount] = useState(0);
+  const editExpense = async (id: string, updatedExpense: Expense) => {
+    await axios.put(`http://localhost:8000/budgets/expenses/${id}?token=${localStorage.getItem("token")}`, updatedExpense);
+    fetchData();
+  };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-      if (!name || !category || amount <= 0) return;
-
-      await axios.post(`http://localhost:8000/budgets?token=${localStorage.getItem("token")}`, {
-        name,
-        category,
-        amount,
-      });
-
-      window.location.reload()
-
-      setName("");
-      setCategory("");
-      setAmount(0);
-
-    };
-
-    return (
-      <form onSubmit={handleSubmit} className="expense-form">
-        <h2>Add Expense</h2>
-        <div className="expense-form-pair">
-          <label>Name:</label>
-          <div className="expense-form-input">
-            <input
-              className="input"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="expense-form-pair">
-          <label>Category:</label>
-          <div className="expense-form-input">
-            <input
-              type="text"
-              className="input"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="expense-form-pair">
-          <label>Amount:</label>
-          <div className="expense-form-input">
-            <input
-              type="number"
-              className="input"
-              value={amount}
-              onChange={(e) => setAmount(parseFloat(e.target.value))}
-            />
-          </div>
-        </div>
-        <button type="submit" className="form-button">
-          Add Expense
-        </button>
-      </form>
-    );
+  const addExpense = async (newExpense: Expense) => {
+    await axios.post(`http://localhost:8000/budgets?token=${localStorage.getItem("token")}`, newExpense);
+    fetchData();
   };
 
   return (
@@ -147,17 +61,21 @@ function Budget() {
       <h1>Budget Management</h1>
       <div className="budget-content">
         <div className="expense-list">
-          <ExpenseForm addExpense={addExpense} />
+          <h2>Expenses</h2>
           <button className="download-text" onClick={downloadExpenses}>
             Download Expenses
           </button>
-          <BudgetExpenses
-            expenses={expenses}
-            deleteExpense={deleteExpense}
-            editExpense={editExpense}
-          />
+          <ul>
+            {expenses.map((expense) => (
+              <BudgetItem
+                {...expense}
+                key={expense.id}
+                onDelete={() => deleteExpense(expense.id)}
+                onEdit={(editedExpense: Expense) => editExpense(expense.id, editedExpense)}
+              />
+            ))}
+          </ul>
         </div>
-
         <BudgetPie expenses={expenses} />
       </div>
     </div>
