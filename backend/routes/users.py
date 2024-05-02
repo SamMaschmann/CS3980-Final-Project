@@ -100,8 +100,9 @@ class FriendAddRequest(BaseModel):
 @user_router.post("/users/friends")
 async def add_friend(friend_username: FriendAddRequest, user: Users = Depends(get_user)) -> dict:
     # check to see if user being added exists 
+    print("HHHHH")
     exists = await Users.find_one(Users.username == friend_username.friend_username)
-    
+    print("AAAAAAA")
     if not exists:
         logger.info(f"[post /users/friends] {user.username} tried to friend a non-existant user")
         raise HTTPException(
@@ -111,8 +112,8 @@ async def add_friend(friend_username: FriendAddRequest, user: Users = Depends(ge
         
     # check to see if user is already in friend's list 
     if friend_username not in user.friends:
-        user.friends.append(friend_username)
-        user.save()
+        user.friends.append(friend_username.friend_username)
+        await user.save()
     else:
         logger.info("[post /users/friends] User with this username is already a friend for " + user.username)
         raise HTTPException(

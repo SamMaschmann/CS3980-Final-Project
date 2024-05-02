@@ -62,6 +62,12 @@ class PaymentPlan(BaseModel):
     amount: int
     
 
+
+class PaymentState(str, Enum):
+    PENDING = "PENDING"
+    ACCEPTED = "ACCEPTED"
+    DECLINED = "DECLINED"
+    
 # This is where you would store loan payments and regular transactions
 class Payments(Document):
     user: str
@@ -72,6 +78,7 @@ class Payments(Document):
     description: str
     # payment plan this payment is apart of ig?
     payment_plan: Optional[PaymentPlan]
+    state: PaymentState = PaymentState.PENDING
 
     
 
@@ -114,6 +121,7 @@ class PaymentRequest(BaseModel):
     other_user: str
     amount: int
     description: Optional[str]
+    state: Optional[PaymentState] = PaymentState.PENDING
     
 class LoanRequest(BaseModel):
     user: str

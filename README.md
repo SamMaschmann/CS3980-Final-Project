@@ -21,14 +21,14 @@ Backend
         - [ ] Ability to create payment 
             - [ ] For loan
             - [x] For regular transaction 
-        - [ ] Ability to approve payment
-            - [ ] Change getting payments to only show ones that are approved
+        - [x] Ability to approve payment
+            - [x] Change getting payments to only show ones that are approved
         - [ ] Ability to download record of payments (half-done) (required)
         - [ ] Ability to make payment plans (stretch goal)
         - [ ] Uploading transactions records
     - [ ] Loans
         - [ ] Ability to upload documents with loan (required)
-        - [ ] Create loan
+        - [x] Create loan
         - [ ] Ability to change loan status, from open to closed 
         - [ ] Cancel loan (only available for user who gave the loan if from another user)
         - [ ] Edit loan details (^^)
@@ -45,7 +45,7 @@ Backend
         - [ ] Deleting budget
     - [ ] Users
         - [x] Add friends
-        - [ ] Get friends
+        - [x] Get friends
         - [x] Remove friends
         - [ ] Block people
 
@@ -58,9 +58,8 @@ Frontend
             - [ ] If budget is on track 
             - [ ] etc
     - [ ] Transactions
-        - [ ] Clean up UI
-            - [ ] Styled form
-        - [ ] Fix columns for incoming and outgoing 
+        - [x] Clean up UI
+        - [x] Fix columns for incoming and outgoing 
         - **Note: don't need remove / edit, only maybe applicable for admin users
         - [ ] Fetch all users list and make form username field a select from existing users
     - [ ] Loans
@@ -73,15 +72,15 @@ Frontend
     - [ ] Calendar (this might need to be cut for time)
         - [ ] If we do payment plans add those 
     - [ ] Friends
-        - [ ] Add form to add friend 
+        - [x] Add form to add friend 
             - [ ] Fetch list of users and use select
         - [ ] Add ability to quickly send transaction
-        - [ ] Add ability to unfollow 
-        - [ ] Add delete 
+        - [x] Add ability to unfollow 
+        - [x] Add delete 
         - [ ] Clean up UI
-    - [ ] Requests 
-        - [ ] Add ability to approve payment 
-        - [ ] Add ability to delete your requests 
+    - [x] Requests 
+        - [x] Add ability to approve payment 
+        - [x] Add ability to delete your requests 
     - [ ] General
         - [x] Make it so user can't see data unless they're signed in 
         - [x] Redirect to login page if not signed in 

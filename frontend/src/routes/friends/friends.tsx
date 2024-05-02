@@ -8,7 +8,7 @@ import { useAppSelector } from "../../store/hooks";
 function Friends() {
   const [friends, setFriends] = useState<string[]>([]);
 
-  const [user, setUsers] = useState<string[]>([]);
+  const [users, setUsers] = useState<string[]>([]);
 
   const stateUser = useAppSelector((state) => state.auth.user)
 
@@ -34,10 +34,11 @@ function Friends() {
     fetchData();
   }, []);
 
+  console.log(users)
+
   const [newFriendName, setNewFriendName] = useState<string>("");
 
   const handleAddFriend = async () => {
-
     if (newFriendName.trim() !== "") {
       // send request to backend
       await axios.post(
@@ -56,7 +57,6 @@ function Friends() {
     }
   };
 
-  console.log(friends)
 
   const handleUnfollow = async (name: string) => {
     // remove in backend 
@@ -89,16 +89,23 @@ function Friends() {
     <div>
       <header className="friends-header">
         <div className="friends-title">My Friends</div>
-        <div>
+        <div className="friend-form">
           <input
             type="text"
+            className="input"
             placeholder="Enter friend's name"
             value={newFriendName}
             onChange={(e) => setNewFriendName(e.target.value)}
           />
-          <button onClick={handleAddFriend}>Add Friend</button>
+          <div className="friend-form-button">
+            <Button
+              bg_color="blue"
+              action={handleAddFriend}
+              text="Add Friend"
+            />
+          </div>
         </div>
-        <Button text="Add Friend" bg_color="blue" />
+
         <button className="download-text" onClick={downloadFriends}>
           Download Friends
         </button>
