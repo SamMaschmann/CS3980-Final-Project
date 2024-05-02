@@ -89,6 +89,9 @@ async def get_friends(user: Users = Depends(get_user)) -> list[str]:
     logger.info("[get /users/friends] Fetching friends of user " + user.username)
     return user.friends
 
+@user_router.get("/users/find")
+async def find_user(token: Token):
+    return get_user(token)
 
 # need this to send data right
 class FriendAddRequest(BaseModel):

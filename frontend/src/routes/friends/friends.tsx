@@ -37,7 +37,7 @@ function Friends() {
   const [newFriendName, setNewFriendName] = useState<string>("");
 
   const handleAddFriend = async () => {
-    alert(stateUser)
+
     if (newFriendName.trim() !== "") {
       // send request to backend
       await axios.post(

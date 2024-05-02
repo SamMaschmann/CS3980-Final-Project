@@ -304,3 +304,9 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 20:20:00,462: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
 2024-04-30 20:20:06,958: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
 2024-04-30 20:20:07,134: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:28:22,562: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:28:22,725: routes.payments: INFO - [get /payments] Fetching payments for user zxcvb
+2024-04-30 20:28:30,910: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:28:31,323: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:31:29,900: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
+2024-04-30 20:31:30,334: routes.users: INFO - [post /signin] Successfully signed in user zxcvb
