@@ -15,6 +15,12 @@
     height: 4rem;
   }
 
+  .budget-add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 
   .form-button {
     background-color: rgb(171, 171, 232);
@@ -22,6 +28,13 @@
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     color: white;
     width: 8rem;
+    margin: auto;
+  }
+
+  .expenses-title {
+    display: flex;
+    justify-content: center;
+    width: 25rem;
     margin: auto;
   }
 
