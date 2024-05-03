@@ -454,3 +454,41 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-04-30 21:49:42,903: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
 2024-04-30 21:49:45,209: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
 2024-04-30 21:49:45,300: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:09:12,905: passlib.handlers.bcrypt: WARN - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\jacka\OneDrive\Desktop\Python Web Uiowa\CS3980-Final-Project\backend\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-05-01 13:09:13,460: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-05-01 13:09:13,949: routes.users: INFO - [post /signin] Successfully signed in user jrenning
+2024-05-01 13:09:19,563: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:19,572: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:19,617: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:19,915: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:23,272: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:09:23,428: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:09:29,655: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:29,663: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:29,721: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:29,728: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:35,178: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:35,183: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:35,230: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:09:35,238: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:09:39,817: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-05-01 13:09:39,902: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-05-01 13:09:41,931: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:09:42,082: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:22:39,973: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-05-01 13:22:40,072: routes.loans: INFO - [get /loans] Fetching loans for user jrenning
+2024-05-01 13:22:42,394: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:22:42,556: routes.payments: INFO - [get /payments] Fetching payments for user jrenning
+2024-05-01 13:22:44,530: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:22:44,538: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:22:44,627: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:22:44,686: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:22:45,580: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:22:45,588: routes.users: INFO - [get /users] Fetching all users
+2024-05-01 13:22:45,636: routes.users: INFO - [get /users/friends] Fetching friends of user jrenning
+2024-05-01 13:22:45,644: routes.users: INFO - [get /users] Fetching all users
