@@ -17,29 +17,29 @@ Backend
     - [x] Account creation
         - [x] Sign in
         - [x] Sign up
-    - [ ] Payments
-        - [ ] Ability to create payment 
+    - [x] Payments
+        - [x] Ability to create payment 
             - [ ] For loan
             - [x] For regular transaction 
         - [x] Ability to approve payment
             - [x] Change getting payments to only show ones that are approved
-        - [ ] Ability to download record of payments (half-done) (required)
+        - [x] Ability to download record of payments (half-done) (required)
         - [ ] Ability to make payment plans (stretch goal)
-        - [ ] Uploading transactions records
+        - [ ] Uploading transactions records (stretch goal)
     - [ ] Loans
-        - [ ] Ability to upload documents with loan (required)
+        - [x] Ability to upload documents with loan (required)
         - [x] Create loan
         - [ ] Ability to change loan status, from open to closed 
-        - [ ] Cancel loan (only available for user who gave the loan if from another user)
+        - [x] Cancel loan (only available for user who gave the loan if from another user)
         - [ ] Edit loan details (^^)
     - [ ] Budget
-        - [ ] Ability to create a budget
+        - [x] Ability to create a budget
             - [x] Ability to add expense
-            - [ ] Adding category
-            - [ ] Adding initial budget object (just no expenses)
-        - [ ] Ability to edit a budget
-            - [ ] Edit expense
-            - [ ] Edit budget categories, name and %
+            - [x] Adding category
+            - [x] Adding initial budget object (just no expenses)
+        - [x] Ability to edit a budget
+            - [x] Edit expense
+            - [x] Edit budget categories, name and %
         - [x] Getting budget data for user
             - ~~[ ] Handle if user has multiple budgets~~
         - [ ] Deleting budget
@@ -64,11 +64,11 @@ Frontend
         - [ ] Fetch all users list and make form username field a select from existing users
     - [ ] Loans
         - Clean up UI
-            - [ ] Styled form
+            - [x] Styled form
         - [ ] Add ability to delete / edit (if allowed)
         - [ ] Fetch all users list and make form username field a select from existing users
-        - [ ] Add field to form to upload documents
-        - [ ] Add ability to download / delete loan documents 
+        - [x] Add field to form to upload documents
+        - [x] Add ability to download / delete loan documents 
     - [ ] Calendar (this might need to be cut for time)
         - [ ] If we do payment plans add those 
     - [ ] Friends
@@ -77,7 +77,7 @@ Frontend
         - [ ] Add ability to quickly send transaction
         - [x] Add ability to unfollow 
         - [x] Add delete 
-        - [ ] Clean up UI
+        - [x] Clean up UI
     - [x] Requests 
         - [x] Add ability to approve payment 
         - [x] Add ability to delete your requests 
@@ -117,7 +117,17 @@ To create a build of the frontend that can be deployed as a static site you can 
 ## main.py
 This is the Python code that runs the website. It uses FastAPI for the app and Starlette for the file responses.
 
-## Frontend
 
+
+## Features
+
+- Request money from other users, they can approve or decline
+- Keep track of existing loans and their amounts as well as any important documemts
+- Add other users as friends to keep up on who you interact with the most
+- View a calender with the option of scheduling future payments to keep on top of your finances
+- View, and download, a history of all your transactions, allows for easy personal record keeping online or on paper
+- Keep track of what your spending money on with the budget feature. This allows you to enter your expenses in given categories and see the results summed in a nice graph
+- All of these features are tied to your personal account using a username and password
 
 ## Pictures
+
