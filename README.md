@@ -131,3 +131,23 @@ This is the Python code that runs the website. It uses FastAPI for the app and S
 
 ## Pictures
 
+### Sign Up Page
+![signup_page](./pics/signup.png)
+
+### Transactions
+![transactions_page](./pics/transactions.png)
+
+### Budget
+![budget_page](./pics/budget.png)
+
+### Friends
+![friends_page](./pics/friends.png)
+
+### Calendar
+![calendar_page](./pics/calendar.png)
+
+### Loans
+![loans_page](./pics/calendar.png)
+
+### Requests
+![requests_page](./pics/requests.png)
